@@ -1,0 +1,149 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+group = 'com.myco.web.fastweb.war'
+version = "1.0"
+
+// 构建脚本对SSH的依赖
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+// 自定义属性
+def appName = 'fastweb'
+def warName = appName + '.war'
+
+sourceSets.main.java.srcDir 'src/main/java'
+sourceSets.main.resources.srcDir 'src/main/resources'
+eclipse.wtp.component.contextPath = "${appName}"
+
+// 当前工程及所有子工程的依赖
+allprojects {
+
+    apply plugin: 'java'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+    repositories{  
+        jcenter()
+    }
+    
+    dependencies {
+    	compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+	    // compile group: 'javax.servlet.jsp', name: 'javax.servlet.jsp-api', version: '2.3.1'
+	    compile group: 'commons-lang', name: 'commons-lang', version: '2.6'
+        compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.2'
+        compile group: 'commons-logging', name: 'commons-logging', version: '1.2'
+        compile group: 'commons-io', name: 'commons-io', version: '2.4'
+        compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
+        compile group: 'commons-fileupload', name: 'commons-fileupload', version: '1.3.1'
+        compile group: 'commons-httpclient', name: 'commons-httpclient', version: '3.1'
+        compile group: 'com.google.code.gson', name: 'gson', version: '2.6.2'
+        compile group: 'ch.ethz.ganymed', name: 'ganymed-ssh2', version: 'build209'
+        compile group: 'log4j', name: 'log4j', version: '1.2.17'
+        compile group: 'cglib', name: 'cglib', version: '3.2.2'
+        compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.7'
+        compile group: 'dom4j', name: 'dom4j', version: '1.6.1'
+        compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.30'
+        compile group: 'net.minidev', name: 'json-smart', version: '2.2.1'
+        compile group: 'redis.clients', name: 'jedis', version: '2.8.1'
+        compile group: 'xerces', name: 'xercesImpl', version: '2.11.0'
+        compile group: 'org.mongodb', name: 'mongo-java-driver', version: '3.2.2'
+        compile group: 'org.codehaus.jackson', name: 'jackson-core-asl', version: '1.9.13'
+        compile group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: '1.9.13'
+        compile group: 'org.apache.commons', name: 'commons-configuration2', version: '2.0'
+        compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+        compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.6.2'
+        compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.6.2'
+        compile group: 'org.apache.poi', name: 'poi', version: '3.12'
+        compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.9'
+        compile group: 'org.apache.poi', name: 'poi-ooxml-schemas', version: '3.9'
+        compile group: 'org.jasig.cas', name: 'cas-client-core', version: '3.1.10'
+        compile group: 'org.mybatis', name: 'mybatis-spring', version: '1.2.2'
+        compile group: 'org.mybatis', name: 'mybatis', version: '3.2.8'
+        compile group: 'org.springframework', name: 'spring-dao', version: '2.0.8'
+        compile group: 'org.springframework', name: 'spring-core', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework', name: 'spring-beans', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework', name: 'spring-expression', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework', name: 'spring-aop', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework', name: 'spring-aspects', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework', name: 'spring-context', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework', name: 'spring-context-support', version: '3.2.1.RELEASE'
+        // compile group: 'org.springframework', name: 'spring-instrument', version: '3.2.1.RELEASE'
+        // compile group: 'org.springframework', name: 'spring-instrument-tomcat', version: '3.2.1.RELEASE'
+        // compile group: 'org.springframework', name: 'spring-jdbc', version: '3.2.1.RELEASE'
+        // compile group: 'org.springframework', name: 'spring-jms', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework', name: 'spring-orm', version: '3.2.1.RELEASE'
+        // compile group: 'org.springframework', name: 'spring-oxm', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework', name: 'spring-web', version: '3.2.1.RELEASE'
+        // compile group: 'org.springframework', name: 'spring-test', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework', name: 'spring-tx', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework', name: 'spring-webmvc', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework.security', name: 'spring-security-acl', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework.security', name: 'spring-security-aspects', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework.security', name: 'spring-security-cas', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework.security', name: 'spring-security-cas-client', version: '3.0.8.RELEASE'
+        compile group: 'org.springframework.security', name: 'spring-security-config', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework.security', name: 'spring-security-core', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework.security', name: 'spring-security-crypto', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework.security', name: 'spring-security-ldap', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework.security', name: 'spring-security-web', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework.security', name: 'spring-security-taglibs', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework.security', name: 'spring-security-remoting', version: '3.2.1.RELEASE'
+        compile group: 'org.springframework.security', name: 'spring-security-openid', version: '3.2.1.RELEASE'
+        compile group: 'org.python', name: 'jython', version: '2.5.3'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.5'
+        
+        compileOnly(
+        	"javaee:javaee-api:5"
+        )
+        testCompile (
+            "junit:junit:4.12"
+        )
+    }
+    
+}
+
+subprojects {
+
+    // 各子工程共享的扩展属性
+    // ext{
+		// deployProject='bh.toolkit.deployment.dev.jar'
+		// springframework_version = '3.2.1.RELEASE'
+		// springframework_security_version = '3.2.1.RELEASE'
+		// spring_security_cas_client_version = '3.0.8.RELEASE'
+		// org_springframework_spring_data_mongo_version = '1.2.1.RELEASE'
+		// org_springframework_spring_data_jedis_version = '1.0.4.RELEASE'
+		// org_mongodb_mongo_java_driver = '3.2.2'
+		// cxf_version = '2.7.14'
+		// drools_version = '5.2.1.Final'
+	// }
+	
+	// 各子工程依赖的第三方类库
+	dependencies {
+    }
+    
+}
+
+// 定义当前工程对其他工程的依赖
+dependencies {
+    compile project(':com.myco.web.fastweb.jar')
+    compile project(':bh.toolkit.common.jar')
+    compileOnly(
+        "javaee:javaee-api:5"
+    )
+}
+
+processResources {
+    exclude { "src/main/resources/*.*" }
+}
+
+war {
+    archiveName "${warName}"
+}
+
+// 定义各任务依赖关系
+processResources.dependsOn clean
+// copyWar.dependsOn war

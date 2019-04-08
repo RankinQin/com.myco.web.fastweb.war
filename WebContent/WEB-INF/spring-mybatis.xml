@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans classpath:org/springframework/beans/factory/xml/spring-beans-3.2.xsd
+	                    http://www.springframework.org/schema/context classpath:org/springframework/context/config/spring-context-3.2.xsd
+                        http://www.springframework.org/schema/aop classpath:org/springframework/aop/config/spring-aop-3.2.xsd
+                        http://www.springframework.org/schema/tx classpath:org/springframework/transaction/config/spring-tx-3.2.xsd
+                        http://www.springframework.org/schema/mvc classpath:org/springframework/web/servlet/config/spring-mvc-3.2.xsd">
+
+    <!-- 引入JDBC配置文件 -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <!-- <property name="location" value="classpath:com/cbc/common/jdbc/jdbc.properties" /> -->
+        <property name="location" value="classpath:jdbc.properties" />
+    </bean>
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driver}" />
+        <property name="url" value="${hive.jdbc.url}" />
+        <property name="username" value="${hive.jdbc.username}" />
+        <property name="password" value="${hive.jdbc.password}" />
+        <!-- 初始化连接大小 -->
+        <property name="initialSize" value="${hive.jdbc.initialSize}"></property>
+        <!-- 连接池最大数量 -->
+        <property name="maxActive" value="${hive.jdbc.maxActive}"></property>
+        <!-- 连接池最大空闲 -->
+        <property name="maxIdle" value="${hive.jdbc.maxIdle}"></property>
+        <!-- 连接池最小空闲 -->
+        <property name="minIdle" value="${hive.jdbc.minIdle}"></property>
+        <!-- 获取连接最大等待时间 -->
+        <property name="maxWait" value="${hive.jdbc.maxWait}"></property>
+        <!-- 在空闲连接回收器线程运行期间休眠的时间值,以毫秒为单位. -->
+        <property name="timeBetweenEvictionRunsMillis" value="${hive.jdbc.timeBetweenEvictionRunsMillis}" />
+        <!-- 指明连接是否被空闲连接回收器(如果有)进行检验.如果检测失败,则连接将被从池中去除 -->
+        <property name="testWhileIdle" value="true" />
+        <!-- SQL查询,用来验证从连接池取出的连接 -->
+        <property name="validationQuery" value="SELECT NOW() FROM DUAL" />
+    </bean>
+
+    <!-- Spring和MyBatis整合，不需要mybatis的配置映射文件 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+        <property name="dataSource" ref="dataSource" />
+        <!-- 扫描Mapper文件 -->
+        <property name="mapperLocations">
+            <list>
+                <value>classpath:com/myco/orm/map/cart/base/**/*.xml</value>
+                <value>classpath:com/myco/orm/map/cart/ext/**/*.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.myco.orm.dao" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+    </bean>
+
+    <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="get*" read-only="true" />
+            <tx:method name="find*" read-only="true" />
+            <tx:method name="count*" read-only="true" />
+            <tx:method name="count*" read-only="true" />
+            <tx:method name="*" propagation="REQUIRED" rollback-for="com.myco.common.exception.AppException" />
+        </tx:attributes>
+    </tx:advice>
+
+    <!-- CGlib Proxy: proxy-target-class="true" -->
+    <aop:config>
+        <aop:pointcut expression="execution (* com.myco.manager..*.*(..)))" id="mgr" />
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="mgr" />
+    </aop:config>
+
+</beans>  

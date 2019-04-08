@@ -1,0 +1,2352 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myco.orm.dao.cart.base.IFlPtyWhseDao" >
+    <resultMap id="selectFlPtyWhsePureListResultMap" type="com.myco.model.dto.cart.ext.FlPtyWhseDtoX">
+        <result property="flPtyFcltyVo.id" column="CART__FL_PTY_FCLTY__ID" jdbcType="BIGINT"/>
+        <result property="flPtyFcltyVo.ptyId" column="CART__FL_PTY_FCLTY__PTY_ID" jdbcType="BIGINT"/>
+        <result property="flPtyFcltyVo.ptyCd" column="CART__FL_PTY_FCLTY__PTY_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.ptyNmCn" column="CART__FL_PTY_FCLTY__PTY_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.fcltyId" column="CART__FL_PTY_FCLTY__FCLTY_ID" jdbcType="BIGINT"/>
+        <result property="flPtyFcltyVo.fcltyCd" column="CART__FL_PTY_FCLTY__FCLTY_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.fcltyNmCn" column="CART__FL_PTY_FCLTY__FCLTY_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.fcltyCatCd" column="CART__FL_PTY_FCLTY__FCLTY_CAT_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.fcltyCatNmCn" column="CART__FL_PTY_FCLTY__FCLTY_CAT_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.cd" column="CART__FL_PTY_FCLTY__CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.nmCn" column="CART__FL_PTY_FCLTY__NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.nmEn" column="CART__FL_PTY_FCLTY__NM_EN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.oprSpec" column="CART__FL_PTY_FCLTY__OPR_SPEC" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.memo" column="CART__FL_PTY_FCLTY__MEMO" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.catCd" column="CART__FL_PTY_FCLTY__CAT_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.catNmCn" column="CART__FL_PTY_FCLTY__CAT_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.ownerId" column="CART__FL_PTY_FCLTY__OWNER_ID" jdbcType="BIGINT"/>
+        <result property="flPtyFcltyVo.ownerCd" column="CART__FL_PTY_FCLTY__OWNER_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.ownerNmCn" column="CART__FL_PTY_FCLTY__OWNER_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.ownerContcNm" column="CART__FL_PTY_FCLTY__OWNER_CONTC_NM" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.ownerContcTel" column="CART__FL_PTY_FCLTY__OWNER_CONTC_TEL" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.drvrId" column="CART__FL_PTY_FCLTY__DRVR_ID" jdbcType="BIGINT"/>
+        <result property="flPtyFcltyVo.drvrCd" column="CART__FL_PTY_FCLTY__DRVR_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.drvrNmCn" column="CART__FL_PTY_FCLTY__DRVR_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.vldFrom" column="CART__FL_PTY_FCLTY__VLD_FROM" jdbcType="TIMESTAMP"/>
+        <result property="flPtyFcltyVo.vldTo" column="CART__FL_PTY_FCLTY__VLD_TO" jdbcType="TIMESTAMP"/>
+        <result property="flPtyFcltyVo.statCd" column="CART__FL_PTY_FCLTY__STAT_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.statNmCn" column="CART__FL_PTY_FCLTY__STAT_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.viewOrd" column="CART__FL_PTY_FCLTY__VIEW_ORD" jdbcType="SMALLINT"/>
+        <result property="flPtyFcltyVo.logicOrd" column="CART__FL_PTY_FCLTY__LOGIC_ORD" jdbcType="INTEGER"/>
+        <result property="flPtyFcltyVo.prefFlag" column="CART__FL_PTY_FCLTY__PREF_FLAG" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.crtTm" column="CART__FL_PTY_FCLTY__CRT_TM" jdbcType="TIMESTAMP"/>
+        <result property="flPtyFcltyVo.crtBy" column="CART__FL_PTY_FCLTY__CRT_BY" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.crtChlCd" column="CART__FL_PTY_FCLTY__CRT_CHL_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.updTm" column="CART__FL_PTY_FCLTY__UPD_TM" jdbcType="TIMESTAMP"/>
+        <result property="flPtyFcltyVo.updBy" column="CART__FL_PTY_FCLTY__UPD_BY" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.updChlCd" column="CART__FL_PTY_FCLTY__UPD_CHL_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.editFlag" column="CART__FL_PTY_FCLTY__EDIT_FLAG" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.relsNbr" column="CART__FL_PTY_FCLTY__RELS_NBR" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.id" column="CART__FL_PTY_FCLTY_LOC__ID" jdbcType="BIGINT"/>
+        <result property="flPtyFcltyLocVo.ptyFcltyId" column="CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_ID" jdbcType="BIGINT"/>
+        <result property="flPtyFcltyLocVo.ptyFcltyCd" column="CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.ptyFcltyNmCn" column="CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.locId" column="CART__FL_PTY_FCLTY_LOC__LOC_ID" jdbcType="BIGINT"/>
+        <result property="flPtyFcltyLocVo.locCd" column="CART__FL_PTY_FCLTY_LOC__LOC_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.locNmCn" column="CART__FL_PTY_FCLTY_LOC__LOC_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.cd" column="CART__FL_PTY_FCLTY_LOC__CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.nmCn" column="CART__FL_PTY_FCLTY_LOC__NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.nmEn" column="CART__FL_PTY_FCLTY_LOC__NM_EN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.memo" column="CART__FL_PTY_FCLTY_LOC__MEMO" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.catCd" column="CART__FL_PTY_FCLTY_LOC__CAT_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.catNmCn" column="CART__FL_PTY_FCLTY_LOC__CAT_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.ctryCd" column="CART__FL_PTY_FCLTY_LOC__CTRY_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.ctryNmCn" column="CART__FL_PTY_FCLTY_LOC__CTRY_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.stCd" column="CART__FL_PTY_FCLTY_LOC__ST_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.stNmCn" column="CART__FL_PTY_FCLTY_LOC__ST_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.ctyCd" column="CART__FL_PTY_FCLTY_LOC__CTY_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.ctyNmCn" column="CART__FL_PTY_FCLTY_LOC__CTY_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.distCd" column="CART__FL_PTY_FCLTY_LOC__DIST_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.distNmCn" column="CART__FL_PTY_FCLTY_LOC__DIST_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.addrLine1" column="CART__FL_PTY_FCLTY_LOC__ADDR_LINE1" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.addrLine2" column="CART__FL_PTY_FCLTY_LOC__ADDR_LINE2" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.zipCd" column="CART__FL_PTY_FCLTY_LOC__ZIP_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.contcNm1" column="CART__FL_PTY_FCLTY_LOC__CONTC_NM1" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.contcNm2" column="CART__FL_PTY_FCLTY_LOC__CONTC_NM2" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.telephone1" column="CART__FL_PTY_FCLTY_LOC__TELEPHONE1" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.telephone2" column="CART__FL_PTY_FCLTY_LOC__TELEPHONE2" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.telephone3" column="CART__FL_PTY_FCLTY_LOC__TELEPHONE3" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.mobilePhone1" column="CART__FL_PTY_FCLTY_LOC__MOBILE_PHONE1" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.mobilePhone2" column="CART__FL_PTY_FCLTY_LOC__MOBILE_PHONE2" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.vldFrom" column="CART__FL_PTY_FCLTY_LOC__VLD_FROM" jdbcType="TIMESTAMP"/>
+        <result property="flPtyFcltyLocVo.vldTo" column="CART__FL_PTY_FCLTY_LOC__VLD_TO" jdbcType="TIMESTAMP"/>
+        <result property="flPtyFcltyLocVo.statCd" column="CART__FL_PTY_FCLTY_LOC__STAT_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.statNmCn" column="CART__FL_PTY_FCLTY_LOC__STAT_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.viewOrd" column="CART__FL_PTY_FCLTY_LOC__VIEW_ORD" jdbcType="SMALLINT"/>
+        <result property="flPtyFcltyLocVo.logicOrd" column="CART__FL_PTY_FCLTY_LOC__LOGIC_ORD" jdbcType="SMALLINT"/>
+        <result property="flPtyFcltyLocVo.crtTm" column="CART__FL_PTY_FCLTY_LOC__CRT_TM" jdbcType="TIMESTAMP"/>
+        <result property="flPtyFcltyLocVo.crtBy" column="CART__FL_PTY_FCLTY_LOC__CRT_BY" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.updTm" column="CART__FL_PTY_FCLTY_LOC__UPD_TM" jdbcType="TIMESTAMP"/>
+        <result property="flPtyFcltyLocVo.updBy" column="CART__FL_PTY_FCLTY_LOC__UPD_BY" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.editFlag" column="CART__FL_PTY_FCLTY_LOC__EDIT_FLAG" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.relsNbr" column="CART__FL_PTY_FCLTY_LOC__RELS_NBR" jdbcType="VARCHAR"/>
+    </resultMap>
+    <resultMap id="selectFlPtyWhseResultMap" type="com.myco.model.dto.cart.ext.FlPtyWhseDtoX">
+        <result property="flPtyFcltyVo.id" column="CART__FL_PTY_FCLTY__ID" jdbcType="BIGINT"/>
+        <result property="flPtyFcltyVo.ptyId" column="CART__FL_PTY_FCLTY__PTY_ID" jdbcType="BIGINT"/>
+        <result property="flPtyFcltyVo.ptyCd" column="CART__FL_PTY_FCLTY__PTY_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.ptyNmCn" column="CART__FL_PTY_FCLTY__PTY_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.fcltyId" column="CART__FL_PTY_FCLTY__FCLTY_ID" jdbcType="BIGINT"/>
+        <result property="flPtyFcltyVo.fcltyCd" column="CART__FL_PTY_FCLTY__FCLTY_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.fcltyNmCn" column="CART__FL_PTY_FCLTY__FCLTY_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.fcltyCatCd" column="CART__FL_PTY_FCLTY__FCLTY_CAT_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.fcltyCatNmCn" column="CART__FL_PTY_FCLTY__FCLTY_CAT_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.cd" column="CART__FL_PTY_FCLTY__CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.nmCn" column="CART__FL_PTY_FCLTY__NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.nmEn" column="CART__FL_PTY_FCLTY__NM_EN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.oprSpec" column="CART__FL_PTY_FCLTY__OPR_SPEC" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.memo" column="CART__FL_PTY_FCLTY__MEMO" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.catCd" column="CART__FL_PTY_FCLTY__CAT_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.catNmCn" column="CART__FL_PTY_FCLTY__CAT_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.ownerId" column="CART__FL_PTY_FCLTY__OWNER_ID" jdbcType="BIGINT"/>
+        <result property="flPtyFcltyVo.ownerCd" column="CART__FL_PTY_FCLTY__OWNER_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.ownerNmCn" column="CART__FL_PTY_FCLTY__OWNER_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.ownerContcNm" column="CART__FL_PTY_FCLTY__OWNER_CONTC_NM" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.ownerContcTel" column="CART__FL_PTY_FCLTY__OWNER_CONTC_TEL" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.drvrId" column="CART__FL_PTY_FCLTY__DRVR_ID" jdbcType="BIGINT"/>
+        <result property="flPtyFcltyVo.drvrCd" column="CART__FL_PTY_FCLTY__DRVR_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.drvrNmCn" column="CART__FL_PTY_FCLTY__DRVR_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.vldFrom" column="CART__FL_PTY_FCLTY__VLD_FROM" jdbcType="TIMESTAMP"/>
+        <result property="flPtyFcltyVo.vldTo" column="CART__FL_PTY_FCLTY__VLD_TO" jdbcType="TIMESTAMP"/>
+        <result property="flPtyFcltyVo.statCd" column="CART__FL_PTY_FCLTY__STAT_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.statNmCn" column="CART__FL_PTY_FCLTY__STAT_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.viewOrd" column="CART__FL_PTY_FCLTY__VIEW_ORD" jdbcType="SMALLINT"/>
+        <result property="flPtyFcltyVo.logicOrd" column="CART__FL_PTY_FCLTY__LOGIC_ORD" jdbcType="INTEGER"/>
+        <result property="flPtyFcltyVo.prefFlag" column="CART__FL_PTY_FCLTY__PREF_FLAG" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.crtTm" column="CART__FL_PTY_FCLTY__CRT_TM" jdbcType="TIMESTAMP"/>
+        <result property="flPtyFcltyVo.crtBy" column="CART__FL_PTY_FCLTY__CRT_BY" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.crtChlCd" column="CART__FL_PTY_FCLTY__CRT_CHL_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.updTm" column="CART__FL_PTY_FCLTY__UPD_TM" jdbcType="TIMESTAMP"/>
+        <result property="flPtyFcltyVo.updBy" column="CART__FL_PTY_FCLTY__UPD_BY" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.updChlCd" column="CART__FL_PTY_FCLTY__UPD_CHL_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.editFlag" column="CART__FL_PTY_FCLTY__EDIT_FLAG" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyVo.relsNbr" column="CART__FL_PTY_FCLTY__RELS_NBR" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.id" column="CART__FL_PTY_FCLTY_LOC__ID" jdbcType="BIGINT"/>
+        <result property="flPtyFcltyLocVo.ptyFcltyId" column="CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_ID" jdbcType="BIGINT"/>
+        <result property="flPtyFcltyLocVo.ptyFcltyCd" column="CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.ptyFcltyNmCn" column="CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.locId" column="CART__FL_PTY_FCLTY_LOC__LOC_ID" jdbcType="BIGINT"/>
+        <result property="flPtyFcltyLocVo.locCd" column="CART__FL_PTY_FCLTY_LOC__LOC_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.locNmCn" column="CART__FL_PTY_FCLTY_LOC__LOC_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.cd" column="CART__FL_PTY_FCLTY_LOC__CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.nmCn" column="CART__FL_PTY_FCLTY_LOC__NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.nmEn" column="CART__FL_PTY_FCLTY_LOC__NM_EN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.memo" column="CART__FL_PTY_FCLTY_LOC__MEMO" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.catCd" column="CART__FL_PTY_FCLTY_LOC__CAT_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.catNmCn" column="CART__FL_PTY_FCLTY_LOC__CAT_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.ctryCd" column="CART__FL_PTY_FCLTY_LOC__CTRY_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.ctryNmCn" column="CART__FL_PTY_FCLTY_LOC__CTRY_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.stCd" column="CART__FL_PTY_FCLTY_LOC__ST_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.stNmCn" column="CART__FL_PTY_FCLTY_LOC__ST_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.ctyCd" column="CART__FL_PTY_FCLTY_LOC__CTY_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.ctyNmCn" column="CART__FL_PTY_FCLTY_LOC__CTY_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.distCd" column="CART__FL_PTY_FCLTY_LOC__DIST_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.distNmCn" column="CART__FL_PTY_FCLTY_LOC__DIST_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.addrLine1" column="CART__FL_PTY_FCLTY_LOC__ADDR_LINE1" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.addrLine2" column="CART__FL_PTY_FCLTY_LOC__ADDR_LINE2" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.zipCd" column="CART__FL_PTY_FCLTY_LOC__ZIP_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.contcNm1" column="CART__FL_PTY_FCLTY_LOC__CONTC_NM1" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.contcNm2" column="CART__FL_PTY_FCLTY_LOC__CONTC_NM2" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.telephone1" column="CART__FL_PTY_FCLTY_LOC__TELEPHONE1" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.telephone2" column="CART__FL_PTY_FCLTY_LOC__TELEPHONE2" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.telephone3" column="CART__FL_PTY_FCLTY_LOC__TELEPHONE3" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.mobilePhone1" column="CART__FL_PTY_FCLTY_LOC__MOBILE_PHONE1" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.mobilePhone2" column="CART__FL_PTY_FCLTY_LOC__MOBILE_PHONE2" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.vldFrom" column="CART__FL_PTY_FCLTY_LOC__VLD_FROM" jdbcType="TIMESTAMP"/>
+        <result property="flPtyFcltyLocVo.vldTo" column="CART__FL_PTY_FCLTY_LOC__VLD_TO" jdbcType="TIMESTAMP"/>
+        <result property="flPtyFcltyLocVo.statCd" column="CART__FL_PTY_FCLTY_LOC__STAT_CD" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.statNmCn" column="CART__FL_PTY_FCLTY_LOC__STAT_NM_CN" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.viewOrd" column="CART__FL_PTY_FCLTY_LOC__VIEW_ORD" jdbcType="SMALLINT"/>
+        <result property="flPtyFcltyLocVo.logicOrd" column="CART__FL_PTY_FCLTY_LOC__LOGIC_ORD" jdbcType="SMALLINT"/>
+        <result property="flPtyFcltyLocVo.crtTm" column="CART__FL_PTY_FCLTY_LOC__CRT_TM" jdbcType="TIMESTAMP"/>
+        <result property="flPtyFcltyLocVo.crtBy" column="CART__FL_PTY_FCLTY_LOC__CRT_BY" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.updTm" column="CART__FL_PTY_FCLTY_LOC__UPD_TM" jdbcType="TIMESTAMP"/>
+        <result property="flPtyFcltyLocVo.updBy" column="CART__FL_PTY_FCLTY_LOC__UPD_BY" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.editFlag" column="CART__FL_PTY_FCLTY_LOC__EDIT_FLAG" jdbcType="VARCHAR"/>
+        <result property="flPtyFcltyLocVo.relsNbr" column="CART__FL_PTY_FCLTY_LOC__RELS_NBR" jdbcType="VARCHAR"/>
+        <result property="rtRteVo.arrvPtyFcltyId" column="CART__RT_RTE__ARRV_PTY_FCLTY_ID" jdbcType="BIGINT"/>
+        <result property="fnPtyLoadoffPricingVo.ptyFcltyId" column="CART__FN_PTY_LOADOFF_PRICING__PTY_FCLTY_ID" jdbcType="BIGINT"/>
+    </resultMap>
+    <resultMap id="selectFlPtyWhseHasDelivPriceResultMap" type="com.myco.model.dto.cart.ext.FlPtyWhseDtoX">
+        <result property="flPtyFcltyVo.id" column="CART__FL_PTY_FCLTY__ID" jdbcType="BIGINT"/>
+    </resultMap>
+    <sql id="sql:insertFlPtyFcltyAll">
+        <![CDATA[ insert into CART.FL_PTY_FCLTY
+             (ID, PTY_ID, PTY_CD, PTY_NM_CN, FCLTY_ID, FCLTY_CD, FCLTY_NM_CN, FCLTY_CAT_CD, FCLTY_CAT_NM_CN, CD, NM_CN, NM_EN, OPR_SPEC, MEMO, CAT_CD
+            , CAT_NM_CN, OWNER_ID, OWNER_CD, OWNER_NM_CN, OWNER_CONTC_NM, OWNER_CONTC_TEL, DRVR_ID, DRVR_CD, DRVR_NM_CN, VLD_FROM, VLD_TO, STAT_CD, STAT_NM_CN
+            , VIEW_ORD, LOGIC_ORD, PREF_FLAG, CRT_TM, CRT_BY, CRT_CHL_CD, UPD_TM, UPD_BY, UPD_CHL_CD, EDIT_FLAG, RELS_NBR)
+             values 
+             (#{id}, #{ptyId}, #{ptyCd}, #{ptyNmCn}, #{fcltyId}, #{fcltyCd}, #{fcltyNmCn}, #{fcltyCatCd}, #{fcltyCatNmCn}, #{cd}, #{nmCn}, #{nmEn}, #{oprSpec}
+            , #{memo}, #{catCd}, #{catNmCn}, #{ownerId}, #{ownerCd}, #{ownerNmCn}, #{ownerContcNm}, #{ownerContcTel}, #{drvrId}, #{drvrCd}, #{drvrNmCn}
+            , #{vldFrom}, #{vldTo}, #{statCd}, #{statNmCn}, #{viewOrd}, #{logicOrd}, #{prefFlag}, #{crtTm}, #{crtBy}, #{crtChlCd}, #{updTm}, #{updBy}
+            , #{updChlCd}, #{editFlag}, #{relsNbr}) ]]>
+    </sql>
+    <sql id="sql:insertFlPtyFcltySelectiveColumn">
+        <trim prefix="insert into CART.FL_PTY_FCLTY (" prefixOverrides=", " suffix=")">
+            <if test="id != null">
+                , ID
+            </if>
+            <if test="ptyId != null">
+                , PTY_ID
+            </if>
+            <if test="ptyCd != null">
+                , PTY_CD
+            </if>
+            <if test="ptyNmCn != null">
+                , PTY_NM_CN
+            </if>
+            <if test="fcltyId != null">
+                , FCLTY_ID
+            </if>
+            <if test="fcltyCd != null">
+                , FCLTY_CD
+            </if>
+            <if test="fcltyNmCn != null">
+                , FCLTY_NM_CN
+            </if>
+            <if test="fcltyCatCd != null">
+                , FCLTY_CAT_CD
+            </if>
+            <if test="fcltyCatNmCn != null">
+                , FCLTY_CAT_NM_CN
+            </if>
+            <if test="cd != null">
+                , CD
+            </if>
+            <if test="nmCn != null">
+                , NM_CN
+            </if>
+            <if test="nmEn != null">
+                , NM_EN
+            </if>
+            <if test="oprSpec != null">
+                , OPR_SPEC
+            </if>
+            <if test="memo != null">
+                , MEMO
+            </if>
+            <if test="catCd != null">
+                , CAT_CD
+            </if>
+            <if test="catNmCn != null">
+                , CAT_NM_CN
+            </if>
+            <if test="ownerId != null">
+                , OWNER_ID
+            </if>
+            <if test="ownerCd != null">
+                , OWNER_CD
+            </if>
+            <if test="ownerNmCn != null">
+                , OWNER_NM_CN
+            </if>
+            <if test="ownerContcNm != null">
+                , OWNER_CONTC_NM
+            </if>
+            <if test="ownerContcTel != null">
+                , OWNER_CONTC_TEL
+            </if>
+            <if test="drvrId != null">
+                , DRVR_ID
+            </if>
+            <if test="drvrCd != null">
+                , DRVR_CD
+            </if>
+            <if test="drvrNmCn != null">
+                , DRVR_NM_CN
+            </if>
+            <if test="vldFrom != null">
+                , VLD_FROM
+            </if>
+            <if test="vldTo != null">
+                , VLD_TO
+            </if>
+            <if test="statCd != null">
+                , STAT_CD
+            </if>
+            <if test="statNmCn != null">
+                , STAT_NM_CN
+            </if>
+            <if test="viewOrd != null">
+                , VIEW_ORD
+            </if>
+            <if test="logicOrd != null">
+                , LOGIC_ORD
+            </if>
+            <if test="prefFlag != null">
+                , PREF_FLAG
+            </if>
+            <if test="crtTm != null">
+                , CRT_TM
+            </if>
+            <if test="crtBy != null">
+                , CRT_BY
+            </if>
+            <if test="crtChlCd != null">
+                , CRT_CHL_CD
+            </if>
+            <if test="updTm != null">
+                , UPD_TM
+            </if>
+            <if test="updBy != null">
+                , UPD_BY
+            </if>
+            <if test="updChlCd != null">
+                , UPD_CHL_CD
+            </if>
+            <if test="editFlag != null">
+                , EDIT_FLAG
+            </if>
+            <if test="relsNbr != null">
+                , RELS_NBR
+            </if>
+        </trim>
+    </sql>
+    <sql id="sql:insertFlPtyFcltySelectiveValue">
+        <trim prefix=" values (" prefixOverrides=", " suffix=")">
+            <if test="id != null">
+                , #{id}
+            </if>
+            <if test="ptyId != null">
+                , #{ptyId}
+            </if>
+            <if test="ptyCd != null">
+                , #{ptyCd}
+            </if>
+            <if test="ptyNmCn != null">
+                , #{ptyNmCn}
+            </if>
+            <if test="fcltyId != null">
+                , #{fcltyId}
+            </if>
+            <if test="fcltyCd != null">
+                , #{fcltyCd}
+            </if>
+            <if test="fcltyNmCn != null">
+                , #{fcltyNmCn}
+            </if>
+            <if test="fcltyCatCd != null">
+                , #{fcltyCatCd}
+            </if>
+            <if test="fcltyCatNmCn != null">
+                , #{fcltyCatNmCn}
+            </if>
+            <if test="cd != null">
+                , #{cd}
+            </if>
+            <if test="nmCn != null">
+                , #{nmCn}
+            </if>
+            <if test="nmEn != null">
+                , #{nmEn}
+            </if>
+            <if test="oprSpec != null">
+                , #{oprSpec}
+            </if>
+            <if test="memo != null">
+                , #{memo}
+            </if>
+            <if test="catCd != null">
+                , #{catCd}
+            </if>
+            <if test="catNmCn != null">
+                , #{catNmCn}
+            </if>
+            <if test="ownerId != null">
+                , #{ownerId}
+            </if>
+            <if test="ownerCd != null">
+                , #{ownerCd}
+            </if>
+            <if test="ownerNmCn != null">
+                , #{ownerNmCn}
+            </if>
+            <if test="ownerContcNm != null">
+                , #{ownerContcNm}
+            </if>
+            <if test="ownerContcTel != null">
+                , #{ownerContcTel}
+            </if>
+            <if test="drvrId != null">
+                , #{drvrId}
+            </if>
+            <if test="drvrCd != null">
+                , #{drvrCd}
+            </if>
+            <if test="drvrNmCn != null">
+                , #{drvrNmCn}
+            </if>
+            <if test="vldFrom != null">
+                , #{vldFrom}
+            </if>
+            <if test="vldTo != null">
+                , #{vldTo}
+            </if>
+            <if test="statCd != null">
+                , #{statCd}
+            </if>
+            <if test="statNmCn != null">
+                , #{statNmCn}
+            </if>
+            <if test="viewOrd != null">
+                , #{viewOrd}
+            </if>
+            <if test="logicOrd != null">
+                , #{logicOrd}
+            </if>
+            <if test="prefFlag != null">
+                , #{prefFlag}
+            </if>
+            <if test="crtTm != null">
+                , #{crtTm}
+            </if>
+            <if test="crtBy != null">
+                , #{crtBy}
+            </if>
+            <if test="crtChlCd != null">
+                , #{crtChlCd}
+            </if>
+            <if test="updTm != null">
+                , #{updTm}
+            </if>
+            <if test="updBy != null">
+                , #{updBy}
+            </if>
+            <if test="updChlCd != null">
+                , #{updChlCd}
+            </if>
+            <if test="editFlag != null">
+                , #{editFlag}
+            </if>
+            <if test="relsNbr != null">
+                , #{relsNbr}
+            </if>
+        </trim>
+    </sql>
+    <sql id="sql:insertFlPtyFcltyAllInBatchWithPKColumn">
+        <![CDATA[ insert into CART.FL_PTY_FCLTY
+             (ID, PTY_ID, PTY_CD, PTY_NM_CN, FCLTY_ID, FCLTY_CD, FCLTY_NM_CN, FCLTY_CAT_CD, FCLTY_CAT_NM_CN, CD, NM_CN, NM_EN, OPR_SPEC, MEMO, CAT_CD
+            , CAT_NM_CN, OWNER_ID, OWNER_CD, OWNER_NM_CN, OWNER_CONTC_NM, OWNER_CONTC_TEL, DRVR_ID, DRVR_CD, DRVR_NM_CN, VLD_FROM, VLD_TO, STAT_CD, STAT_NM_CN
+            , VIEW_ORD, LOGIC_ORD, PREF_FLAG, CRT_TM, CRT_BY, CRT_CHL_CD, UPD_TM, UPD_BY, UPD_CHL_CD, EDIT_FLAG, RELS_NBR) ]]>
+    </sql>
+    <sql id="sql:insertFlPtyFcltyAllInBatchWithPKValue">
+        <![CDATA[  (#{flPtyFcltyVo.id}, #{flPtyFcltyVo.ptyId}, #{flPtyFcltyVo.ptyCd}, #{flPtyFcltyVo.ptyNmCn}, #{flPtyFcltyVo.fcltyId}, #{flPtyFcltyVo.fcltyCd}, #{flPtyFcltyVo.fcltyNmCn}
+            , #{flPtyFcltyVo.fcltyCatCd}, #{flPtyFcltyVo.fcltyCatNmCn}, #{flPtyFcltyVo.cd}, #{flPtyFcltyVo.nmCn}, #{flPtyFcltyVo.nmEn}, #{flPtyFcltyVo.oprSpec}
+            , #{flPtyFcltyVo.memo}, #{flPtyFcltyVo.catCd}, #{flPtyFcltyVo.catNmCn}, #{flPtyFcltyVo.ownerId}, #{flPtyFcltyVo.ownerCd}, #{flPtyFcltyVo.ownerNmCn}
+            , #{flPtyFcltyVo.ownerContcNm}, #{flPtyFcltyVo.ownerContcTel}, #{flPtyFcltyVo.drvrId}, #{flPtyFcltyVo.drvrCd}, #{flPtyFcltyVo.drvrNmCn}, #{flPtyFcltyVo.vldFrom}
+            , #{flPtyFcltyVo.vldTo}, #{flPtyFcltyVo.statCd}, #{flPtyFcltyVo.statNmCn}, #{flPtyFcltyVo.viewOrd}, #{flPtyFcltyVo.logicOrd}, #{flPtyFcltyVo.prefFlag}
+            , #{flPtyFcltyVo.crtTm}, #{flPtyFcltyVo.crtBy}, #{flPtyFcltyVo.crtChlCd}, #{flPtyFcltyVo.updTm}, #{flPtyFcltyVo.updBy}, #{flPtyFcltyVo.updChlCd}
+            , #{flPtyFcltyVo.editFlag}, #{flPtyFcltyVo.relsNbr}) ]]>
+    </sql>
+    <sql id="sql:updateFlPtyFcltyAllByPK">
+        <trim prefix="update CART.FL_PTY_FCLTY set" prefixOverrides=", ">
+            <![CDATA[ 
+            , ID = #{id}
+            , PTY_ID = #{ptyId}
+            , PTY_CD = #{ptyCd}
+            , PTY_NM_CN = #{ptyNmCn}
+            , FCLTY_ID = #{fcltyId}
+            , FCLTY_CD = #{fcltyCd}
+            , FCLTY_NM_CN = #{fcltyNmCn}
+            , FCLTY_CAT_CD = #{fcltyCatCd}
+            , FCLTY_CAT_NM_CN = #{fcltyCatNmCn}
+            , CD = #{cd}
+            , NM_CN = #{nmCn}
+            , NM_EN = #{nmEn}
+            , OPR_SPEC = #{oprSpec}
+            , MEMO = #{memo}
+            , CAT_CD = #{catCd}
+            , CAT_NM_CN = #{catNmCn}
+            , OWNER_ID = #{ownerId}
+            , OWNER_CD = #{ownerCd}
+            , OWNER_NM_CN = #{ownerNmCn}
+            , OWNER_CONTC_NM = #{ownerContcNm}
+            , OWNER_CONTC_TEL = #{ownerContcTel}
+            , DRVR_ID = #{drvrId}
+            , DRVR_CD = #{drvrCd}
+            , DRVR_NM_CN = #{drvrNmCn}
+            , VLD_FROM = #{vldFrom}
+            , VLD_TO = #{vldTo}
+            , STAT_CD = #{statCd}
+            , STAT_NM_CN = #{statNmCn}
+            , VIEW_ORD = #{viewOrd}
+            , LOGIC_ORD = #{logicOrd}
+            , PREF_FLAG = #{prefFlag}
+            , CRT_TM = #{crtTm}
+            , CRT_BY = #{crtBy}
+            , CRT_CHL_CD = #{crtChlCd}
+            , UPD_TM = #{updTm}
+            , UPD_BY = #{updBy}
+            , UPD_CHL_CD = #{updChlCd}
+            , EDIT_FLAG = #{editFlag}
+            , RELS_NBR = #{relsNbr} ]]>
+        </trim>
+    </sql>
+    <sql id="sql:updateFlPtyFcltyAllByPKTmLck">
+        <trim prefix="update CART.FL_PTY_FCLTY set" prefixOverrides=", ">
+            <![CDATA[ 
+            , ID = #{newValue.id}
+            , PTY_ID = #{newValue.ptyId}
+            , PTY_CD = #{newValue.ptyCd}
+            , PTY_NM_CN = #{newValue.ptyNmCn}
+            , FCLTY_ID = #{newValue.fcltyId}
+            , FCLTY_CD = #{newValue.fcltyCd}
+            , FCLTY_NM_CN = #{newValue.fcltyNmCn}
+            , FCLTY_CAT_CD = #{newValue.fcltyCatCd}
+            , FCLTY_CAT_NM_CN = #{newValue.fcltyCatNmCn}
+            , CD = #{newValue.cd}
+            , NM_CN = #{newValue.nmCn}
+            , NM_EN = #{newValue.nmEn}
+            , OPR_SPEC = #{newValue.oprSpec}
+            , MEMO = #{newValue.memo}
+            , CAT_CD = #{newValue.catCd}
+            , CAT_NM_CN = #{newValue.catNmCn}
+            , OWNER_ID = #{newValue.ownerId}
+            , OWNER_CD = #{newValue.ownerCd}
+            , OWNER_NM_CN = #{newValue.ownerNmCn}
+            , OWNER_CONTC_NM = #{newValue.ownerContcNm}
+            , OWNER_CONTC_TEL = #{newValue.ownerContcTel}
+            , DRVR_ID = #{newValue.drvrId}
+            , DRVR_CD = #{newValue.drvrCd}
+            , DRVR_NM_CN = #{newValue.drvrNmCn}
+            , VLD_FROM = #{newValue.vldFrom}
+            , VLD_TO = #{newValue.vldTo}
+            , STAT_CD = #{newValue.statCd}
+            , STAT_NM_CN = #{newValue.statNmCn}
+            , VIEW_ORD = #{newValue.viewOrd}
+            , LOGIC_ORD = #{newValue.logicOrd}
+            , PREF_FLAG = #{newValue.prefFlag}
+            , CRT_TM = #{newValue.crtTm}
+            , CRT_BY = #{newValue.crtBy}
+            , CRT_CHL_CD = #{newValue.crtChlCd}
+            , UPD_TM = #{newValue.updTm}
+            , UPD_BY = #{newValue.updBy}
+            , UPD_CHL_CD = #{newValue.updChlCd}
+            , EDIT_FLAG = #{newValue.editFlag}
+            , RELS_NBR = #{newValue.relsNbr} ]]>
+        </trim>
+    </sql>
+    <sql id="sql:updateFlPtyFcltySelectiveByPK">
+        <trim prefix="update CART.FL_PTY_FCLTY set" prefixOverrides=",">
+            <if test="id != null">
+                , ID = #{id}
+            </if>
+            <if test="ptyId != null">
+                , PTY_ID = #{ptyId}
+            </if>
+            <if test="ptyCd != null">
+                , PTY_CD = #{ptyCd}
+            </if>
+            <if test="ptyNmCn != null">
+                , PTY_NM_CN = #{ptyNmCn}
+            </if>
+            <if test="fcltyId != null">
+                , FCLTY_ID = #{fcltyId}
+            </if>
+            <if test="fcltyCd != null">
+                , FCLTY_CD = #{fcltyCd}
+            </if>
+            <if test="fcltyNmCn != null">
+                , FCLTY_NM_CN = #{fcltyNmCn}
+            </if>
+            <if test="fcltyCatCd != null">
+                , FCLTY_CAT_CD = #{fcltyCatCd}
+            </if>
+            <if test="fcltyCatNmCn != null">
+                , FCLTY_CAT_NM_CN = #{fcltyCatNmCn}
+            </if>
+            <if test="cd != null">
+                , CD = #{cd}
+            </if>
+            <if test="nmCn != null">
+                , NM_CN = #{nmCn}
+            </if>
+            <if test="nmEn != null">
+                , NM_EN = #{nmEn}
+            </if>
+            <if test="oprSpec != null">
+                , OPR_SPEC = #{oprSpec}
+            </if>
+            <if test="memo != null">
+                , MEMO = #{memo}
+            </if>
+            <if test="catCd != null">
+                , CAT_CD = #{catCd}
+            </if>
+            <if test="catNmCn != null">
+                , CAT_NM_CN = #{catNmCn}
+            </if>
+            <if test="ownerId != null">
+                , OWNER_ID = #{ownerId}
+            </if>
+            <if test="ownerCd != null">
+                , OWNER_CD = #{ownerCd}
+            </if>
+            <if test="ownerNmCn != null">
+                , OWNER_NM_CN = #{ownerNmCn}
+            </if>
+            <if test="ownerContcNm != null">
+                , OWNER_CONTC_NM = #{ownerContcNm}
+            </if>
+            <if test="ownerContcTel != null">
+                , OWNER_CONTC_TEL = #{ownerContcTel}
+            </if>
+            <if test="drvrId != null">
+                , DRVR_ID = #{drvrId}
+            </if>
+            <if test="drvrCd != null">
+                , DRVR_CD = #{drvrCd}
+            </if>
+            <if test="drvrNmCn != null">
+                , DRVR_NM_CN = #{drvrNmCn}
+            </if>
+            <if test="vldFrom != null">
+                , VLD_FROM = #{vldFrom}
+            </if>
+            <if test="vldTo != null">
+                , VLD_TO = #{vldTo}
+            </if>
+            <if test="statCd != null">
+                , STAT_CD = #{statCd}
+            </if>
+            <if test="statNmCn != null">
+                , STAT_NM_CN = #{statNmCn}
+            </if>
+            <if test="viewOrd != null">
+                , VIEW_ORD = #{viewOrd}
+            </if>
+            <if test="logicOrd != null">
+                , LOGIC_ORD = #{logicOrd}
+            </if>
+            <if test="prefFlag != null">
+                , PREF_FLAG = #{prefFlag}
+            </if>
+            <if test="crtTm != null">
+                , CRT_TM = #{crtTm}
+            </if>
+            <if test="crtBy != null">
+                , CRT_BY = #{crtBy}
+            </if>
+            <if test="crtChlCd != null">
+                , CRT_CHL_CD = #{crtChlCd}
+            </if>
+            <if test="updTm != null">
+                , UPD_TM = #{updTm}
+            </if>
+            <if test="updBy != null">
+                , UPD_BY = #{updBy}
+            </if>
+            <if test="updChlCd != null">
+                , UPD_CHL_CD = #{updChlCd}
+            </if>
+            <if test="editFlag != null">
+                , EDIT_FLAG = #{editFlag}
+            </if>
+            <if test="relsNbr != null">
+                , RELS_NBR = #{relsNbr}
+            </if>
+        </trim>
+    </sql>
+    <sql id="sql:updateFlPtyFcltySelectiveByPKTmLck">
+        <trim prefix="update CART.FL_PTY_FCLTY set" prefixOverrides=",">
+            <if test="newValue.id != null">
+                , ID = #{newValue.id}
+            </if>
+            <if test="newValue.ptyId != null">
+                , PTY_ID = #{newValue.ptyId}
+            </if>
+            <if test="newValue.ptyCd != null">
+                , PTY_CD = #{newValue.ptyCd}
+            </if>
+            <if test="newValue.ptyNmCn != null">
+                , PTY_NM_CN = #{newValue.ptyNmCn}
+            </if>
+            <if test="newValue.fcltyId != null">
+                , FCLTY_ID = #{newValue.fcltyId}
+            </if>
+            <if test="newValue.fcltyCd != null">
+                , FCLTY_CD = #{newValue.fcltyCd}
+            </if>
+            <if test="newValue.fcltyNmCn != null">
+                , FCLTY_NM_CN = #{newValue.fcltyNmCn}
+            </if>
+            <if test="newValue.fcltyCatCd != null">
+                , FCLTY_CAT_CD = #{newValue.fcltyCatCd}
+            </if>
+            <if test="newValue.fcltyCatNmCn != null">
+                , FCLTY_CAT_NM_CN = #{newValue.fcltyCatNmCn}
+            </if>
+            <if test="newValue.cd != null">
+                , CD = #{newValue.cd}
+            </if>
+            <if test="newValue.nmCn != null">
+                , NM_CN = #{newValue.nmCn}
+            </if>
+            <if test="newValue.nmEn != null">
+                , NM_EN = #{newValue.nmEn}
+            </if>
+            <if test="newValue.oprSpec != null">
+                , OPR_SPEC = #{newValue.oprSpec}
+            </if>
+            <if test="newValue.memo != null">
+                , MEMO = #{newValue.memo}
+            </if>
+            <if test="newValue.catCd != null">
+                , CAT_CD = #{newValue.catCd}
+            </if>
+            <if test="newValue.catNmCn != null">
+                , CAT_NM_CN = #{newValue.catNmCn}
+            </if>
+            <if test="newValue.ownerId != null">
+                , OWNER_ID = #{newValue.ownerId}
+            </if>
+            <if test="newValue.ownerCd != null">
+                , OWNER_CD = #{newValue.ownerCd}
+            </if>
+            <if test="newValue.ownerNmCn != null">
+                , OWNER_NM_CN = #{newValue.ownerNmCn}
+            </if>
+            <if test="newValue.ownerContcNm != null">
+                , OWNER_CONTC_NM = #{newValue.ownerContcNm}
+            </if>
+            <if test="newValue.ownerContcTel != null">
+                , OWNER_CONTC_TEL = #{newValue.ownerContcTel}
+            </if>
+            <if test="newValue.drvrId != null">
+                , DRVR_ID = #{newValue.drvrId}
+            </if>
+            <if test="newValue.drvrCd != null">
+                , DRVR_CD = #{newValue.drvrCd}
+            </if>
+            <if test="newValue.drvrNmCn != null">
+                , DRVR_NM_CN = #{newValue.drvrNmCn}
+            </if>
+            <if test="newValue.vldFrom != null">
+                , VLD_FROM = #{newValue.vldFrom}
+            </if>
+            <if test="newValue.vldTo != null">
+                , VLD_TO = #{newValue.vldTo}
+            </if>
+            <if test="newValue.statCd != null">
+                , STAT_CD = #{newValue.statCd}
+            </if>
+            <if test="newValue.statNmCn != null">
+                , STAT_NM_CN = #{newValue.statNmCn}
+            </if>
+            <if test="newValue.viewOrd != null">
+                , VIEW_ORD = #{newValue.viewOrd}
+            </if>
+            <if test="newValue.logicOrd != null">
+                , LOGIC_ORD = #{newValue.logicOrd}
+            </if>
+            <if test="newValue.prefFlag != null">
+                , PREF_FLAG = #{newValue.prefFlag}
+            </if>
+            <if test="newValue.crtTm != null">
+                , CRT_TM = #{newValue.crtTm}
+            </if>
+            <if test="newValue.crtBy != null">
+                , CRT_BY = #{newValue.crtBy}
+            </if>
+            <if test="newValue.crtChlCd != null">
+                , CRT_CHL_CD = #{newValue.crtChlCd}
+            </if>
+            <if test="newValue.updTm != null">
+                , UPD_TM = #{newValue.updTm}
+            </if>
+            <if test="newValue.updBy != null">
+                , UPD_BY = #{newValue.updBy}
+            </if>
+            <if test="newValue.updChlCd != null">
+                , UPD_CHL_CD = #{newValue.updChlCd}
+            </if>
+            <if test="newValue.editFlag != null">
+                , EDIT_FLAG = #{newValue.editFlag}
+            </if>
+            <if test="newValue.relsNbr != null">
+                , RELS_NBR = #{newValue.relsNbr}
+            </if>
+        </trim>
+    </sql>
+    <sql id="sql:updateFlPtyFcltyAllBySql">
+        <trim prefix="update CART.FL_PTY_FCLTY set" prefixOverrides=", ">
+            <![CDATA[ 
+            , ID = #{flPtyFcltyVo.id}
+            , PTY_ID = #{flPtyFcltyVo.ptyId}
+            , PTY_CD = #{flPtyFcltyVo.ptyCd}
+            , PTY_NM_CN = #{flPtyFcltyVo.ptyNmCn}
+            , FCLTY_ID = #{flPtyFcltyVo.fcltyId}
+            , FCLTY_CD = #{flPtyFcltyVo.fcltyCd}
+            , FCLTY_NM_CN = #{flPtyFcltyVo.fcltyNmCn}
+            , FCLTY_CAT_CD = #{flPtyFcltyVo.fcltyCatCd}
+            , FCLTY_CAT_NM_CN = #{flPtyFcltyVo.fcltyCatNmCn}
+            , CD = #{flPtyFcltyVo.cd}
+            , NM_CN = #{flPtyFcltyVo.nmCn}
+            , NM_EN = #{flPtyFcltyVo.nmEn}
+            , OPR_SPEC = #{flPtyFcltyVo.oprSpec}
+            , MEMO = #{flPtyFcltyVo.memo}
+            , CAT_CD = #{flPtyFcltyVo.catCd}
+            , CAT_NM_CN = #{flPtyFcltyVo.catNmCn}
+            , OWNER_ID = #{flPtyFcltyVo.ownerId}
+            , OWNER_CD = #{flPtyFcltyVo.ownerCd}
+            , OWNER_NM_CN = #{flPtyFcltyVo.ownerNmCn}
+            , OWNER_CONTC_NM = #{flPtyFcltyVo.ownerContcNm}
+            , OWNER_CONTC_TEL = #{flPtyFcltyVo.ownerContcTel}
+            , DRVR_ID = #{flPtyFcltyVo.drvrId}
+            , DRVR_CD = #{flPtyFcltyVo.drvrCd}
+            , DRVR_NM_CN = #{flPtyFcltyVo.drvrNmCn}
+            , VLD_FROM = #{flPtyFcltyVo.vldFrom}
+            , VLD_TO = #{flPtyFcltyVo.vldTo}
+            , STAT_CD = #{flPtyFcltyVo.statCd}
+            , STAT_NM_CN = #{flPtyFcltyVo.statNmCn}
+            , VIEW_ORD = #{flPtyFcltyVo.viewOrd}
+            , LOGIC_ORD = #{flPtyFcltyVo.logicOrd}
+            , PREF_FLAG = #{flPtyFcltyVo.prefFlag}
+            , CRT_TM = #{flPtyFcltyVo.crtTm}
+            , CRT_BY = #{flPtyFcltyVo.crtBy}
+            , CRT_CHL_CD = #{flPtyFcltyVo.crtChlCd}
+            , UPD_TM = #{flPtyFcltyVo.updTm}
+            , UPD_BY = #{flPtyFcltyVo.updBy}
+            , UPD_CHL_CD = #{flPtyFcltyVo.updChlCd}
+            , EDIT_FLAG = #{flPtyFcltyVo.editFlag}
+            , RELS_NBR = #{flPtyFcltyVo.relsNbr} ]]>
+        </trim>
+    </sql>
+    <sql id="sql:updateFlPtyFcltySelectiveBySql">
+        <trim prefix="update CART.FL_PTY_FCLTY set" prefixOverrides=",">
+            <if test="flPtyFcltyVo.id != null">
+                , ID = #{flPtyFcltyVo.id}
+            </if>
+            <if test="flPtyFcltyVo.ptyId != null">
+                , PTY_ID = #{flPtyFcltyVo.ptyId}
+            </if>
+            <if test="flPtyFcltyVo.ptyCd != null">
+                , PTY_CD = #{flPtyFcltyVo.ptyCd}
+            </if>
+            <if test="flPtyFcltyVo.ptyNmCn != null">
+                , PTY_NM_CN = #{flPtyFcltyVo.ptyNmCn}
+            </if>
+            <if test="flPtyFcltyVo.fcltyId != null">
+                , FCLTY_ID = #{flPtyFcltyVo.fcltyId}
+            </if>
+            <if test="flPtyFcltyVo.fcltyCd != null">
+                , FCLTY_CD = #{flPtyFcltyVo.fcltyCd}
+            </if>
+            <if test="flPtyFcltyVo.fcltyNmCn != null">
+                , FCLTY_NM_CN = #{flPtyFcltyVo.fcltyNmCn}
+            </if>
+            <if test="flPtyFcltyVo.fcltyCatCd != null">
+                , FCLTY_CAT_CD = #{flPtyFcltyVo.fcltyCatCd}
+            </if>
+            <if test="flPtyFcltyVo.fcltyCatNmCn != null">
+                , FCLTY_CAT_NM_CN = #{flPtyFcltyVo.fcltyCatNmCn}
+            </if>
+            <if test="flPtyFcltyVo.cd != null">
+                , CD = #{flPtyFcltyVo.cd}
+            </if>
+            <if test="flPtyFcltyVo.nmCn != null">
+                , NM_CN = #{flPtyFcltyVo.nmCn}
+            </if>
+            <if test="flPtyFcltyVo.nmEn != null">
+                , NM_EN = #{flPtyFcltyVo.nmEn}
+            </if>
+            <if test="flPtyFcltyVo.oprSpec != null">
+                , OPR_SPEC = #{flPtyFcltyVo.oprSpec}
+            </if>
+            <if test="flPtyFcltyVo.memo != null">
+                , MEMO = #{flPtyFcltyVo.memo}
+            </if>
+            <if test="flPtyFcltyVo.catCd != null">
+                , CAT_CD = #{flPtyFcltyVo.catCd}
+            </if>
+            <if test="flPtyFcltyVo.catNmCn != null">
+                , CAT_NM_CN = #{flPtyFcltyVo.catNmCn}
+            </if>
+            <if test="flPtyFcltyVo.ownerId != null">
+                , OWNER_ID = #{flPtyFcltyVo.ownerId}
+            </if>
+            <if test="flPtyFcltyVo.ownerCd != null">
+                , OWNER_CD = #{flPtyFcltyVo.ownerCd}
+            </if>
+            <if test="flPtyFcltyVo.ownerNmCn != null">
+                , OWNER_NM_CN = #{flPtyFcltyVo.ownerNmCn}
+            </if>
+            <if test="flPtyFcltyVo.ownerContcNm != null">
+                , OWNER_CONTC_NM = #{flPtyFcltyVo.ownerContcNm}
+            </if>
+            <if test="flPtyFcltyVo.ownerContcTel != null">
+                , OWNER_CONTC_TEL = #{flPtyFcltyVo.ownerContcTel}
+            </if>
+            <if test="flPtyFcltyVo.drvrId != null">
+                , DRVR_ID = #{flPtyFcltyVo.drvrId}
+            </if>
+            <if test="flPtyFcltyVo.drvrCd != null">
+                , DRVR_CD = #{flPtyFcltyVo.drvrCd}
+            </if>
+            <if test="flPtyFcltyVo.drvrNmCn != null">
+                , DRVR_NM_CN = #{flPtyFcltyVo.drvrNmCn}
+            </if>
+            <if test="flPtyFcltyVo.vldFrom != null">
+                , VLD_FROM = #{flPtyFcltyVo.vldFrom}
+            </if>
+            <if test="flPtyFcltyVo.vldTo != null">
+                , VLD_TO = #{flPtyFcltyVo.vldTo}
+            </if>
+            <if test="flPtyFcltyVo.statCd != null">
+                , STAT_CD = #{flPtyFcltyVo.statCd}
+            </if>
+            <if test="flPtyFcltyVo.statNmCn != null">
+                , STAT_NM_CN = #{flPtyFcltyVo.statNmCn}
+            </if>
+            <if test="flPtyFcltyVo.viewOrd != null">
+                , VIEW_ORD = #{flPtyFcltyVo.viewOrd}
+            </if>
+            <if test="flPtyFcltyVo.logicOrd != null">
+                , LOGIC_ORD = #{flPtyFcltyVo.logicOrd}
+            </if>
+            <if test="flPtyFcltyVo.prefFlag != null">
+                , PREF_FLAG = #{flPtyFcltyVo.prefFlag}
+            </if>
+            <if test="flPtyFcltyVo.crtTm != null">
+                , CRT_TM = #{flPtyFcltyVo.crtTm}
+            </if>
+            <if test="flPtyFcltyVo.crtBy != null">
+                , CRT_BY = #{flPtyFcltyVo.crtBy}
+            </if>
+            <if test="flPtyFcltyVo.crtChlCd != null">
+                , CRT_CHL_CD = #{flPtyFcltyVo.crtChlCd}
+            </if>
+            <if test="flPtyFcltyVo.updTm != null">
+                , UPD_TM = #{flPtyFcltyVo.updTm}
+            </if>
+            <if test="flPtyFcltyVo.updBy != null">
+                , UPD_BY = #{flPtyFcltyVo.updBy}
+            </if>
+            <if test="flPtyFcltyVo.updChlCd != null">
+                , UPD_CHL_CD = #{flPtyFcltyVo.updChlCd}
+            </if>
+            <if test="flPtyFcltyVo.editFlag != null">
+                , EDIT_FLAG = #{flPtyFcltyVo.editFlag}
+            </if>
+            <if test="flPtyFcltyVo.relsNbr != null">
+                , RELS_NBR = #{flPtyFcltyVo.relsNbr}
+            </if>
+        </trim>
+    </sql>
+    <sql id="sql:deleteFlPtyFclty">
+        <![CDATA[ delete from CART.FL_PTY_FCLTY  ]]>
+    </sql>
+    <sql id="sql:insertFlPtyFcltyLocAll">
+        <![CDATA[ insert into CART.FL_PTY_FCLTY_LOC
+             (ID, PTY_FCLTY_ID, PTY_FCLTY_CD, PTY_FCLTY_NM_CN, LOC_ID, LOC_CD, LOC_NM_CN, CD, NM_CN, NM_EN, MEMO, CAT_CD, CAT_NM_CN, CTRY_CD, CTRY_NM_CN
+            , ST_CD, ST_NM_CN, CTY_CD, CTY_NM_CN, DIST_CD, DIST_NM_CN, ADDR_LINE1, ADDR_LINE2, ZIP_CD, CONTC_NM1, CONTC_NM2, TELEPHONE1, TELEPHONE2, TELEPHONE3
+            , MOBILE_PHONE1, MOBILE_PHONE2, VLD_FROM, VLD_TO, STAT_CD, STAT_NM_CN, VIEW_ORD, LOGIC_ORD, CRT_TM, CRT_BY, UPD_TM, UPD_BY, EDIT_FLAG, RELS_NBR
+            )
+             values 
+             (#{id}, #{ptyFcltyId}, #{ptyFcltyCd}, #{ptyFcltyNmCn}, #{locId}, #{locCd}, #{locNmCn}, #{cd}, #{nmCn}, #{nmEn}, #{memo}, #{catCd}, #{catNmCn}
+            , #{ctryCd}, #{ctryNmCn}, #{stCd}, #{stNmCn}, #{ctyCd}, #{ctyNmCn}, #{distCd}, #{distNmCn}, #{addrLine1}, #{addrLine2}, #{zipCd}, #{contcNm1}
+            , #{contcNm2}, #{telephone1}, #{telephone2}, #{telephone3}, #{mobilePhone1}, #{mobilePhone2}, #{vldFrom}, #{vldTo}, #{statCd}, #{statNmCn}
+            , #{viewOrd}, #{logicOrd}, #{crtTm}, #{crtBy}, #{updTm}, #{updBy}, #{editFlag}, #{relsNbr}) ]]>
+    </sql>
+    <sql id="sql:insertFlPtyFcltyLocSelectiveColumn">
+        <trim prefix="insert into CART.FL_PTY_FCLTY_LOC (" prefixOverrides=", " suffix=")">
+            <if test="id != null">
+                , ID
+            </if>
+            <if test="ptyFcltyId != null">
+                , PTY_FCLTY_ID
+            </if>
+            <if test="ptyFcltyCd != null">
+                , PTY_FCLTY_CD
+            </if>
+            <if test="ptyFcltyNmCn != null">
+                , PTY_FCLTY_NM_CN
+            </if>
+            <if test="locId != null">
+                , LOC_ID
+            </if>
+            <if test="locCd != null">
+                , LOC_CD
+            </if>
+            <if test="locNmCn != null">
+                , LOC_NM_CN
+            </if>
+            <if test="cd != null">
+                , CD
+            </if>
+            <if test="nmCn != null">
+                , NM_CN
+            </if>
+            <if test="nmEn != null">
+                , NM_EN
+            </if>
+            <if test="memo != null">
+                , MEMO
+            </if>
+            <if test="catCd != null">
+                , CAT_CD
+            </if>
+            <if test="catNmCn != null">
+                , CAT_NM_CN
+            </if>
+            <if test="ctryCd != null">
+                , CTRY_CD
+            </if>
+            <if test="ctryNmCn != null">
+                , CTRY_NM_CN
+            </if>
+            <if test="stCd != null">
+                , ST_CD
+            </if>
+            <if test="stNmCn != null">
+                , ST_NM_CN
+            </if>
+            <if test="ctyCd != null">
+                , CTY_CD
+            </if>
+            <if test="ctyNmCn != null">
+                , CTY_NM_CN
+            </if>
+            <if test="distCd != null">
+                , DIST_CD
+            </if>
+            <if test="distNmCn != null">
+                , DIST_NM_CN
+            </if>
+            <if test="addrLine1 != null">
+                , ADDR_LINE1
+            </if>
+            <if test="addrLine2 != null">
+                , ADDR_LINE2
+            </if>
+            <if test="zipCd != null">
+                , ZIP_CD
+            </if>
+            <if test="contcNm1 != null">
+                , CONTC_NM1
+            </if>
+            <if test="contcNm2 != null">
+                , CONTC_NM2
+            </if>
+            <if test="telephone1 != null">
+                , TELEPHONE1
+            </if>
+            <if test="telephone2 != null">
+                , TELEPHONE2
+            </if>
+            <if test="telephone3 != null">
+                , TELEPHONE3
+            </if>
+            <if test="mobilePhone1 != null">
+                , MOBILE_PHONE1
+            </if>
+            <if test="mobilePhone2 != null">
+                , MOBILE_PHONE2
+            </if>
+            <if test="vldFrom != null">
+                , VLD_FROM
+            </if>
+            <if test="vldTo != null">
+                , VLD_TO
+            </if>
+            <if test="statCd != null">
+                , STAT_CD
+            </if>
+            <if test="statNmCn != null">
+                , STAT_NM_CN
+            </if>
+            <if test="viewOrd != null">
+                , VIEW_ORD
+            </if>
+            <if test="logicOrd != null">
+                , LOGIC_ORD
+            </if>
+            <if test="crtTm != null">
+                , CRT_TM
+            </if>
+            <if test="crtBy != null">
+                , CRT_BY
+            </if>
+            <if test="updTm != null">
+                , UPD_TM
+            </if>
+            <if test="updBy != null">
+                , UPD_BY
+            </if>
+            <if test="editFlag != null">
+                , EDIT_FLAG
+            </if>
+            <if test="relsNbr != null">
+                , RELS_NBR
+            </if>
+        </trim>
+    </sql>
+    <sql id="sql:insertFlPtyFcltyLocSelectiveValue">
+        <trim prefix=" values (" prefixOverrides=", " suffix=")">
+            <if test="id != null">
+                , #{id}
+            </if>
+            <if test="ptyFcltyId != null">
+                , #{ptyFcltyId}
+            </if>
+            <if test="ptyFcltyCd != null">
+                , #{ptyFcltyCd}
+            </if>
+            <if test="ptyFcltyNmCn != null">
+                , #{ptyFcltyNmCn}
+            </if>
+            <if test="locId != null">
+                , #{locId}
+            </if>
+            <if test="locCd != null">
+                , #{locCd}
+            </if>
+            <if test="locNmCn != null">
+                , #{locNmCn}
+            </if>
+            <if test="cd != null">
+                , #{cd}
+            </if>
+            <if test="nmCn != null">
+                , #{nmCn}
+            </if>
+            <if test="nmEn != null">
+                , #{nmEn}
+            </if>
+            <if test="memo != null">
+                , #{memo}
+            </if>
+            <if test="catCd != null">
+                , #{catCd}
+            </if>
+            <if test="catNmCn != null">
+                , #{catNmCn}
+            </if>
+            <if test="ctryCd != null">
+                , #{ctryCd}
+            </if>
+            <if test="ctryNmCn != null">
+                , #{ctryNmCn}
+            </if>
+            <if test="stCd != null">
+                , #{stCd}
+            </if>
+            <if test="stNmCn != null">
+                , #{stNmCn}
+            </if>
+            <if test="ctyCd != null">
+                , #{ctyCd}
+            </if>
+            <if test="ctyNmCn != null">
+                , #{ctyNmCn}
+            </if>
+            <if test="distCd != null">
+                , #{distCd}
+            </if>
+            <if test="distNmCn != null">
+                , #{distNmCn}
+            </if>
+            <if test="addrLine1 != null">
+                , #{addrLine1}
+            </if>
+            <if test="addrLine2 != null">
+                , #{addrLine2}
+            </if>
+            <if test="zipCd != null">
+                , #{zipCd}
+            </if>
+            <if test="contcNm1 != null">
+                , #{contcNm1}
+            </if>
+            <if test="contcNm2 != null">
+                , #{contcNm2}
+            </if>
+            <if test="telephone1 != null">
+                , #{telephone1}
+            </if>
+            <if test="telephone2 != null">
+                , #{telephone2}
+            </if>
+            <if test="telephone3 != null">
+                , #{telephone3}
+            </if>
+            <if test="mobilePhone1 != null">
+                , #{mobilePhone1}
+            </if>
+            <if test="mobilePhone2 != null">
+                , #{mobilePhone2}
+            </if>
+            <if test="vldFrom != null">
+                , #{vldFrom}
+            </if>
+            <if test="vldTo != null">
+                , #{vldTo}
+            </if>
+            <if test="statCd != null">
+                , #{statCd}
+            </if>
+            <if test="statNmCn != null">
+                , #{statNmCn}
+            </if>
+            <if test="viewOrd != null">
+                , #{viewOrd}
+            </if>
+            <if test="logicOrd != null">
+                , #{logicOrd}
+            </if>
+            <if test="crtTm != null">
+                , #{crtTm}
+            </if>
+            <if test="crtBy != null">
+                , #{crtBy}
+            </if>
+            <if test="updTm != null">
+                , #{updTm}
+            </if>
+            <if test="updBy != null">
+                , #{updBy}
+            </if>
+            <if test="editFlag != null">
+                , #{editFlag}
+            </if>
+            <if test="relsNbr != null">
+                , #{relsNbr}
+            </if>
+        </trim>
+    </sql>
+    <sql id="sql:insertFlPtyFcltyLocAllInBatchWithPKColumn">
+        <![CDATA[ insert into CART.FL_PTY_FCLTY_LOC
+             (ID, PTY_FCLTY_ID, PTY_FCLTY_CD, PTY_FCLTY_NM_CN, LOC_ID, LOC_CD, LOC_NM_CN, CD, NM_CN, NM_EN, MEMO, CAT_CD, CAT_NM_CN, CTRY_CD, CTRY_NM_CN
+            , ST_CD, ST_NM_CN, CTY_CD, CTY_NM_CN, DIST_CD, DIST_NM_CN, ADDR_LINE1, ADDR_LINE2, ZIP_CD, CONTC_NM1, CONTC_NM2, TELEPHONE1, TELEPHONE2, TELEPHONE3
+            , MOBILE_PHONE1, MOBILE_PHONE2, VLD_FROM, VLD_TO, STAT_CD, STAT_NM_CN, VIEW_ORD, LOGIC_ORD, CRT_TM, CRT_BY, UPD_TM, UPD_BY, EDIT_FLAG, RELS_NBR
+            ) ]]>
+    </sql>
+    <sql id="sql:insertFlPtyFcltyLocAllInBatchWithPKValue">
+        <![CDATA[  (#{flPtyFcltyLocVo.id}, #{flPtyFcltyLocVo.ptyFcltyId}, #{flPtyFcltyLocVo.ptyFcltyCd}, #{flPtyFcltyLocVo.ptyFcltyNmCn}, #{flPtyFcltyLocVo.locId}, #{flPtyFcltyLocVo.locCd}
+            , #{flPtyFcltyLocVo.locNmCn}, #{flPtyFcltyLocVo.cd}, #{flPtyFcltyLocVo.nmCn}, #{flPtyFcltyLocVo.nmEn}, #{flPtyFcltyLocVo.memo}, #{flPtyFcltyLocVo.catCd}
+            , #{flPtyFcltyLocVo.catNmCn}, #{flPtyFcltyLocVo.ctryCd}, #{flPtyFcltyLocVo.ctryNmCn}, #{flPtyFcltyLocVo.stCd}, #{flPtyFcltyLocVo.stNmCn}, #{flPtyFcltyLocVo.ctyCd}
+            , #{flPtyFcltyLocVo.ctyNmCn}, #{flPtyFcltyLocVo.distCd}, #{flPtyFcltyLocVo.distNmCn}, #{flPtyFcltyLocVo.addrLine1}, #{flPtyFcltyLocVo.addrLine2}
+            , #{flPtyFcltyLocVo.zipCd}, #{flPtyFcltyLocVo.contcNm1}, #{flPtyFcltyLocVo.contcNm2}, #{flPtyFcltyLocVo.telephone1}, #{flPtyFcltyLocVo.telephone2}
+            , #{flPtyFcltyLocVo.telephone3}, #{flPtyFcltyLocVo.mobilePhone1}, #{flPtyFcltyLocVo.mobilePhone2}, #{flPtyFcltyLocVo.vldFrom}, #{flPtyFcltyLocVo.vldTo}
+            , #{flPtyFcltyLocVo.statCd}, #{flPtyFcltyLocVo.statNmCn}, #{flPtyFcltyLocVo.viewOrd}, #{flPtyFcltyLocVo.logicOrd}, #{flPtyFcltyLocVo.crtTm}
+            , #{flPtyFcltyLocVo.crtBy}, #{flPtyFcltyLocVo.updTm}, #{flPtyFcltyLocVo.updBy}, #{flPtyFcltyLocVo.editFlag}, #{flPtyFcltyLocVo.relsNbr}) ]]>
+    </sql>
+    <sql id="sql:updateFlPtyFcltyLocAllByPK">
+        <trim prefix="update CART.FL_PTY_FCLTY_LOC set" prefixOverrides=", ">
+            <![CDATA[ 
+            , ID = #{id}
+            , PTY_FCLTY_ID = #{ptyFcltyId}
+            , PTY_FCLTY_CD = #{ptyFcltyCd}
+            , PTY_FCLTY_NM_CN = #{ptyFcltyNmCn}
+            , LOC_ID = #{locId}
+            , LOC_CD = #{locCd}
+            , LOC_NM_CN = #{locNmCn}
+            , CD = #{cd}
+            , NM_CN = #{nmCn}
+            , NM_EN = #{nmEn}
+            , MEMO = #{memo}
+            , CAT_CD = #{catCd}
+            , CAT_NM_CN = #{catNmCn}
+            , CTRY_CD = #{ctryCd}
+            , CTRY_NM_CN = #{ctryNmCn}
+            , ST_CD = #{stCd}
+            , ST_NM_CN = #{stNmCn}
+            , CTY_CD = #{ctyCd}
+            , CTY_NM_CN = #{ctyNmCn}
+            , DIST_CD = #{distCd}
+            , DIST_NM_CN = #{distNmCn}
+            , ADDR_LINE1 = #{addrLine1}
+            , ADDR_LINE2 = #{addrLine2}
+            , ZIP_CD = #{zipCd}
+            , CONTC_NM1 = #{contcNm1}
+            , CONTC_NM2 = #{contcNm2}
+            , TELEPHONE1 = #{telephone1}
+            , TELEPHONE2 = #{telephone2}
+            , TELEPHONE3 = #{telephone3}
+            , MOBILE_PHONE1 = #{mobilePhone1}
+            , MOBILE_PHONE2 = #{mobilePhone2}
+            , VLD_FROM = #{vldFrom}
+            , VLD_TO = #{vldTo}
+            , STAT_CD = #{statCd}
+            , STAT_NM_CN = #{statNmCn}
+            , VIEW_ORD = #{viewOrd}
+            , LOGIC_ORD = #{logicOrd}
+            , CRT_TM = #{crtTm}
+            , CRT_BY = #{crtBy}
+            , UPD_TM = #{updTm}
+            , UPD_BY = #{updBy}
+            , EDIT_FLAG = #{editFlag}
+            , RELS_NBR = #{relsNbr} ]]>
+        </trim>
+    </sql>
+    <sql id="sql:updateFlPtyFcltyLocAllByPKTmLck">
+        <trim prefix="update CART.FL_PTY_FCLTY_LOC set" prefixOverrides=", ">
+            <![CDATA[ 
+            , ID = #{newValue.id}
+            , PTY_FCLTY_ID = #{newValue.ptyFcltyId}
+            , PTY_FCLTY_CD = #{newValue.ptyFcltyCd}
+            , PTY_FCLTY_NM_CN = #{newValue.ptyFcltyNmCn}
+            , LOC_ID = #{newValue.locId}
+            , LOC_CD = #{newValue.locCd}
+            , LOC_NM_CN = #{newValue.locNmCn}
+            , CD = #{newValue.cd}
+            , NM_CN = #{newValue.nmCn}
+            , NM_EN = #{newValue.nmEn}
+            , MEMO = #{newValue.memo}
+            , CAT_CD = #{newValue.catCd}
+            , CAT_NM_CN = #{newValue.catNmCn}
+            , CTRY_CD = #{newValue.ctryCd}
+            , CTRY_NM_CN = #{newValue.ctryNmCn}
+            , ST_CD = #{newValue.stCd}
+            , ST_NM_CN = #{newValue.stNmCn}
+            , CTY_CD = #{newValue.ctyCd}
+            , CTY_NM_CN = #{newValue.ctyNmCn}
+            , DIST_CD = #{newValue.distCd}
+            , DIST_NM_CN = #{newValue.distNmCn}
+            , ADDR_LINE1 = #{newValue.addrLine1}
+            , ADDR_LINE2 = #{newValue.addrLine2}
+            , ZIP_CD = #{newValue.zipCd}
+            , CONTC_NM1 = #{newValue.contcNm1}
+            , CONTC_NM2 = #{newValue.contcNm2}
+            , TELEPHONE1 = #{newValue.telephone1}
+            , TELEPHONE2 = #{newValue.telephone2}
+            , TELEPHONE3 = #{newValue.telephone3}
+            , MOBILE_PHONE1 = #{newValue.mobilePhone1}
+            , MOBILE_PHONE2 = #{newValue.mobilePhone2}
+            , VLD_FROM = #{newValue.vldFrom}
+            , VLD_TO = #{newValue.vldTo}
+            , STAT_CD = #{newValue.statCd}
+            , STAT_NM_CN = #{newValue.statNmCn}
+            , VIEW_ORD = #{newValue.viewOrd}
+            , LOGIC_ORD = #{newValue.logicOrd}
+            , CRT_TM = #{newValue.crtTm}
+            , CRT_BY = #{newValue.crtBy}
+            , UPD_TM = #{newValue.updTm}
+            , UPD_BY = #{newValue.updBy}
+            , EDIT_FLAG = #{newValue.editFlag}
+            , RELS_NBR = #{newValue.relsNbr} ]]>
+        </trim>
+    </sql>
+    <sql id="sql:updateFlPtyFcltyLocSelectiveByPK">
+        <trim prefix="update CART.FL_PTY_FCLTY_LOC set" prefixOverrides=",">
+            <if test="id != null">
+                , ID = #{id}
+            </if>
+            <if test="ptyFcltyId != null">
+                , PTY_FCLTY_ID = #{ptyFcltyId}
+            </if>
+            <if test="ptyFcltyCd != null">
+                , PTY_FCLTY_CD = #{ptyFcltyCd}
+            </if>
+            <if test="ptyFcltyNmCn != null">
+                , PTY_FCLTY_NM_CN = #{ptyFcltyNmCn}
+            </if>
+            <if test="locId != null">
+                , LOC_ID = #{locId}
+            </if>
+            <if test="locCd != null">
+                , LOC_CD = #{locCd}
+            </if>
+            <if test="locNmCn != null">
+                , LOC_NM_CN = #{locNmCn}
+            </if>
+            <if test="cd != null">
+                , CD = #{cd}
+            </if>
+            <if test="nmCn != null">
+                , NM_CN = #{nmCn}
+            </if>
+            <if test="nmEn != null">
+                , NM_EN = #{nmEn}
+            </if>
+            <if test="memo != null">
+                , MEMO = #{memo}
+            </if>
+            <if test="catCd != null">
+                , CAT_CD = #{catCd}
+            </if>
+            <if test="catNmCn != null">
+                , CAT_NM_CN = #{catNmCn}
+            </if>
+            <if test="ctryCd != null">
+                , CTRY_CD = #{ctryCd}
+            </if>
+            <if test="ctryNmCn != null">
+                , CTRY_NM_CN = #{ctryNmCn}
+            </if>
+            <if test="stCd != null">
+                , ST_CD = #{stCd}
+            </if>
+            <if test="stNmCn != null">
+                , ST_NM_CN = #{stNmCn}
+            </if>
+            <if test="ctyCd != null">
+                , CTY_CD = #{ctyCd}
+            </if>
+            <if test="ctyNmCn != null">
+                , CTY_NM_CN = #{ctyNmCn}
+            </if>
+            <if test="distCd != null">
+                , DIST_CD = #{distCd}
+            </if>
+            <if test="distNmCn != null">
+                , DIST_NM_CN = #{distNmCn}
+            </if>
+            <if test="addrLine1 != null">
+                , ADDR_LINE1 = #{addrLine1}
+            </if>
+            <if test="addrLine2 != null">
+                , ADDR_LINE2 = #{addrLine2}
+            </if>
+            <if test="zipCd != null">
+                , ZIP_CD = #{zipCd}
+            </if>
+            <if test="contcNm1 != null">
+                , CONTC_NM1 = #{contcNm1}
+            </if>
+            <if test="contcNm2 != null">
+                , CONTC_NM2 = #{contcNm2}
+            </if>
+            <if test="telephone1 != null">
+                , TELEPHONE1 = #{telephone1}
+            </if>
+            <if test="telephone2 != null">
+                , TELEPHONE2 = #{telephone2}
+            </if>
+            <if test="telephone3 != null">
+                , TELEPHONE3 = #{telephone3}
+            </if>
+            <if test="mobilePhone1 != null">
+                , MOBILE_PHONE1 = #{mobilePhone1}
+            </if>
+            <if test="mobilePhone2 != null">
+                , MOBILE_PHONE2 = #{mobilePhone2}
+            </if>
+            <if test="vldFrom != null">
+                , VLD_FROM = #{vldFrom}
+            </if>
+            <if test="vldTo != null">
+                , VLD_TO = #{vldTo}
+            </if>
+            <if test="statCd != null">
+                , STAT_CD = #{statCd}
+            </if>
+            <if test="statNmCn != null">
+                , STAT_NM_CN = #{statNmCn}
+            </if>
+            <if test="viewOrd != null">
+                , VIEW_ORD = #{viewOrd}
+            </if>
+            <if test="logicOrd != null">
+                , LOGIC_ORD = #{logicOrd}
+            </if>
+            <if test="crtTm != null">
+                , CRT_TM = #{crtTm}
+            </if>
+            <if test="crtBy != null">
+                , CRT_BY = #{crtBy}
+            </if>
+            <if test="updTm != null">
+                , UPD_TM = #{updTm}
+            </if>
+            <if test="updBy != null">
+                , UPD_BY = #{updBy}
+            </if>
+            <if test="editFlag != null">
+                , EDIT_FLAG = #{editFlag}
+            </if>
+            <if test="relsNbr != null">
+                , RELS_NBR = #{relsNbr}
+            </if>
+        </trim>
+    </sql>
+    <sql id="sql:updateFlPtyFcltyLocSelectiveByPKTmLck">
+        <trim prefix="update CART.FL_PTY_FCLTY_LOC set" prefixOverrides=",">
+            <if test="newValue.id != null">
+                , ID = #{newValue.id}
+            </if>
+            <if test="newValue.ptyFcltyId != null">
+                , PTY_FCLTY_ID = #{newValue.ptyFcltyId}
+            </if>
+            <if test="newValue.ptyFcltyCd != null">
+                , PTY_FCLTY_CD = #{newValue.ptyFcltyCd}
+            </if>
+            <if test="newValue.ptyFcltyNmCn != null">
+                , PTY_FCLTY_NM_CN = #{newValue.ptyFcltyNmCn}
+            </if>
+            <if test="newValue.locId != null">
+                , LOC_ID = #{newValue.locId}
+            </if>
+            <if test="newValue.locCd != null">
+                , LOC_CD = #{newValue.locCd}
+            </if>
+            <if test="newValue.locNmCn != null">
+                , LOC_NM_CN = #{newValue.locNmCn}
+            </if>
+            <if test="newValue.cd != null">
+                , CD = #{newValue.cd}
+            </if>
+            <if test="newValue.nmCn != null">
+                , NM_CN = #{newValue.nmCn}
+            </if>
+            <if test="newValue.nmEn != null">
+                , NM_EN = #{newValue.nmEn}
+            </if>
+            <if test="newValue.memo != null">
+                , MEMO = #{newValue.memo}
+            </if>
+            <if test="newValue.catCd != null">
+                , CAT_CD = #{newValue.catCd}
+            </if>
+            <if test="newValue.catNmCn != null">
+                , CAT_NM_CN = #{newValue.catNmCn}
+            </if>
+            <if test="newValue.ctryCd != null">
+                , CTRY_CD = #{newValue.ctryCd}
+            </if>
+            <if test="newValue.ctryNmCn != null">
+                , CTRY_NM_CN = #{newValue.ctryNmCn}
+            </if>
+            <if test="newValue.stCd != null">
+                , ST_CD = #{newValue.stCd}
+            </if>
+            <if test="newValue.stNmCn != null">
+                , ST_NM_CN = #{newValue.stNmCn}
+            </if>
+            <if test="newValue.ctyCd != null">
+                , CTY_CD = #{newValue.ctyCd}
+            </if>
+            <if test="newValue.ctyNmCn != null">
+                , CTY_NM_CN = #{newValue.ctyNmCn}
+            </if>
+            <if test="newValue.distCd != null">
+                , DIST_CD = #{newValue.distCd}
+            </if>
+            <if test="newValue.distNmCn != null">
+                , DIST_NM_CN = #{newValue.distNmCn}
+            </if>
+            <if test="newValue.addrLine1 != null">
+                , ADDR_LINE1 = #{newValue.addrLine1}
+            </if>
+            <if test="newValue.addrLine2 != null">
+                , ADDR_LINE2 = #{newValue.addrLine2}
+            </if>
+            <if test="newValue.zipCd != null">
+                , ZIP_CD = #{newValue.zipCd}
+            </if>
+            <if test="newValue.contcNm1 != null">
+                , CONTC_NM1 = #{newValue.contcNm1}
+            </if>
+            <if test="newValue.contcNm2 != null">
+                , CONTC_NM2 = #{newValue.contcNm2}
+            </if>
+            <if test="newValue.telephone1 != null">
+                , TELEPHONE1 = #{newValue.telephone1}
+            </if>
+            <if test="newValue.telephone2 != null">
+                , TELEPHONE2 = #{newValue.telephone2}
+            </if>
+            <if test="newValue.telephone3 != null">
+                , TELEPHONE3 = #{newValue.telephone3}
+            </if>
+            <if test="newValue.mobilePhone1 != null">
+                , MOBILE_PHONE1 = #{newValue.mobilePhone1}
+            </if>
+            <if test="newValue.mobilePhone2 != null">
+                , MOBILE_PHONE2 = #{newValue.mobilePhone2}
+            </if>
+            <if test="newValue.vldFrom != null">
+                , VLD_FROM = #{newValue.vldFrom}
+            </if>
+            <if test="newValue.vldTo != null">
+                , VLD_TO = #{newValue.vldTo}
+            </if>
+            <if test="newValue.statCd != null">
+                , STAT_CD = #{newValue.statCd}
+            </if>
+            <if test="newValue.statNmCn != null">
+                , STAT_NM_CN = #{newValue.statNmCn}
+            </if>
+            <if test="newValue.viewOrd != null">
+                , VIEW_ORD = #{newValue.viewOrd}
+            </if>
+            <if test="newValue.logicOrd != null">
+                , LOGIC_ORD = #{newValue.logicOrd}
+            </if>
+            <if test="newValue.crtTm != null">
+                , CRT_TM = #{newValue.crtTm}
+            </if>
+            <if test="newValue.crtBy != null">
+                , CRT_BY = #{newValue.crtBy}
+            </if>
+            <if test="newValue.updTm != null">
+                , UPD_TM = #{newValue.updTm}
+            </if>
+            <if test="newValue.updBy != null">
+                , UPD_BY = #{newValue.updBy}
+            </if>
+            <if test="newValue.editFlag != null">
+                , EDIT_FLAG = #{newValue.editFlag}
+            </if>
+            <if test="newValue.relsNbr != null">
+                , RELS_NBR = #{newValue.relsNbr}
+            </if>
+        </trim>
+    </sql>
+    <sql id="sql:updateFlPtyFcltyLocAllBySql">
+        <trim prefix="update CART.FL_PTY_FCLTY_LOC set" prefixOverrides=", ">
+            <![CDATA[ 
+            , ID = #{flPtyFcltyLocVo.id}
+            , PTY_FCLTY_ID = #{flPtyFcltyLocVo.ptyFcltyId}
+            , PTY_FCLTY_CD = #{flPtyFcltyLocVo.ptyFcltyCd}
+            , PTY_FCLTY_NM_CN = #{flPtyFcltyLocVo.ptyFcltyNmCn}
+            , LOC_ID = #{flPtyFcltyLocVo.locId}
+            , LOC_CD = #{flPtyFcltyLocVo.locCd}
+            , LOC_NM_CN = #{flPtyFcltyLocVo.locNmCn}
+            , CD = #{flPtyFcltyLocVo.cd}
+            , NM_CN = #{flPtyFcltyLocVo.nmCn}
+            , NM_EN = #{flPtyFcltyLocVo.nmEn}
+            , MEMO = #{flPtyFcltyLocVo.memo}
+            , CAT_CD = #{flPtyFcltyLocVo.catCd}
+            , CAT_NM_CN = #{flPtyFcltyLocVo.catNmCn}
+            , CTRY_CD = #{flPtyFcltyLocVo.ctryCd}
+            , CTRY_NM_CN = #{flPtyFcltyLocVo.ctryNmCn}
+            , ST_CD = #{flPtyFcltyLocVo.stCd}
+            , ST_NM_CN = #{flPtyFcltyLocVo.stNmCn}
+            , CTY_CD = #{flPtyFcltyLocVo.ctyCd}
+            , CTY_NM_CN = #{flPtyFcltyLocVo.ctyNmCn}
+            , DIST_CD = #{flPtyFcltyLocVo.distCd}
+            , DIST_NM_CN = #{flPtyFcltyLocVo.distNmCn}
+            , ADDR_LINE1 = #{flPtyFcltyLocVo.addrLine1}
+            , ADDR_LINE2 = #{flPtyFcltyLocVo.addrLine2}
+            , ZIP_CD = #{flPtyFcltyLocVo.zipCd}
+            , CONTC_NM1 = #{flPtyFcltyLocVo.contcNm1}
+            , CONTC_NM2 = #{flPtyFcltyLocVo.contcNm2}
+            , TELEPHONE1 = #{flPtyFcltyLocVo.telephone1}
+            , TELEPHONE2 = #{flPtyFcltyLocVo.telephone2}
+            , TELEPHONE3 = #{flPtyFcltyLocVo.telephone3}
+            , MOBILE_PHONE1 = #{flPtyFcltyLocVo.mobilePhone1}
+            , MOBILE_PHONE2 = #{flPtyFcltyLocVo.mobilePhone2}
+            , VLD_FROM = #{flPtyFcltyLocVo.vldFrom}
+            , VLD_TO = #{flPtyFcltyLocVo.vldTo}
+            , STAT_CD = #{flPtyFcltyLocVo.statCd}
+            , STAT_NM_CN = #{flPtyFcltyLocVo.statNmCn}
+            , VIEW_ORD = #{flPtyFcltyLocVo.viewOrd}
+            , LOGIC_ORD = #{flPtyFcltyLocVo.logicOrd}
+            , CRT_TM = #{flPtyFcltyLocVo.crtTm}
+            , CRT_BY = #{flPtyFcltyLocVo.crtBy}
+            , UPD_TM = #{flPtyFcltyLocVo.updTm}
+            , UPD_BY = #{flPtyFcltyLocVo.updBy}
+            , EDIT_FLAG = #{flPtyFcltyLocVo.editFlag}
+            , RELS_NBR = #{flPtyFcltyLocVo.relsNbr} ]]>
+        </trim>
+    </sql>
+    <sql id="sql:updateFlPtyFcltyLocSelectiveBySql">
+        <trim prefix="update CART.FL_PTY_FCLTY_LOC set" prefixOverrides=",">
+            <if test="flPtyFcltyLocVo.id != null">
+                , ID = #{flPtyFcltyLocVo.id}
+            </if>
+            <if test="flPtyFcltyLocVo.ptyFcltyId != null">
+                , PTY_FCLTY_ID = #{flPtyFcltyLocVo.ptyFcltyId}
+            </if>
+            <if test="flPtyFcltyLocVo.ptyFcltyCd != null">
+                , PTY_FCLTY_CD = #{flPtyFcltyLocVo.ptyFcltyCd}
+            </if>
+            <if test="flPtyFcltyLocVo.ptyFcltyNmCn != null">
+                , PTY_FCLTY_NM_CN = #{flPtyFcltyLocVo.ptyFcltyNmCn}
+            </if>
+            <if test="flPtyFcltyLocVo.locId != null">
+                , LOC_ID = #{flPtyFcltyLocVo.locId}
+            </if>
+            <if test="flPtyFcltyLocVo.locCd != null">
+                , LOC_CD = #{flPtyFcltyLocVo.locCd}
+            </if>
+            <if test="flPtyFcltyLocVo.locNmCn != null">
+                , LOC_NM_CN = #{flPtyFcltyLocVo.locNmCn}
+            </if>
+            <if test="flPtyFcltyLocVo.cd != null">
+                , CD = #{flPtyFcltyLocVo.cd}
+            </if>
+            <if test="flPtyFcltyLocVo.nmCn != null">
+                , NM_CN = #{flPtyFcltyLocVo.nmCn}
+            </if>
+            <if test="flPtyFcltyLocVo.nmEn != null">
+                , NM_EN = #{flPtyFcltyLocVo.nmEn}
+            </if>
+            <if test="flPtyFcltyLocVo.memo != null">
+                , MEMO = #{flPtyFcltyLocVo.memo}
+            </if>
+            <if test="flPtyFcltyLocVo.catCd != null">
+                , CAT_CD = #{flPtyFcltyLocVo.catCd}
+            </if>
+            <if test="flPtyFcltyLocVo.catNmCn != null">
+                , CAT_NM_CN = #{flPtyFcltyLocVo.catNmCn}
+            </if>
+            <if test="flPtyFcltyLocVo.ctryCd != null">
+                , CTRY_CD = #{flPtyFcltyLocVo.ctryCd}
+            </if>
+            <if test="flPtyFcltyLocVo.ctryNmCn != null">
+                , CTRY_NM_CN = #{flPtyFcltyLocVo.ctryNmCn}
+            </if>
+            <if test="flPtyFcltyLocVo.stCd != null">
+                , ST_CD = #{flPtyFcltyLocVo.stCd}
+            </if>
+            <if test="flPtyFcltyLocVo.stNmCn != null">
+                , ST_NM_CN = #{flPtyFcltyLocVo.stNmCn}
+            </if>
+            <if test="flPtyFcltyLocVo.ctyCd != null">
+                , CTY_CD = #{flPtyFcltyLocVo.ctyCd}
+            </if>
+            <if test="flPtyFcltyLocVo.ctyNmCn != null">
+                , CTY_NM_CN = #{flPtyFcltyLocVo.ctyNmCn}
+            </if>
+            <if test="flPtyFcltyLocVo.distCd != null">
+                , DIST_CD = #{flPtyFcltyLocVo.distCd}
+            </if>
+            <if test="flPtyFcltyLocVo.distNmCn != null">
+                , DIST_NM_CN = #{flPtyFcltyLocVo.distNmCn}
+            </if>
+            <if test="flPtyFcltyLocVo.addrLine1 != null">
+                , ADDR_LINE1 = #{flPtyFcltyLocVo.addrLine1}
+            </if>
+            <if test="flPtyFcltyLocVo.addrLine2 != null">
+                , ADDR_LINE2 = #{flPtyFcltyLocVo.addrLine2}
+            </if>
+            <if test="flPtyFcltyLocVo.zipCd != null">
+                , ZIP_CD = #{flPtyFcltyLocVo.zipCd}
+            </if>
+            <if test="flPtyFcltyLocVo.contcNm1 != null">
+                , CONTC_NM1 = #{flPtyFcltyLocVo.contcNm1}
+            </if>
+            <if test="flPtyFcltyLocVo.contcNm2 != null">
+                , CONTC_NM2 = #{flPtyFcltyLocVo.contcNm2}
+            </if>
+            <if test="flPtyFcltyLocVo.telephone1 != null">
+                , TELEPHONE1 = #{flPtyFcltyLocVo.telephone1}
+            </if>
+            <if test="flPtyFcltyLocVo.telephone2 != null">
+                , TELEPHONE2 = #{flPtyFcltyLocVo.telephone2}
+            </if>
+            <if test="flPtyFcltyLocVo.telephone3 != null">
+                , TELEPHONE3 = #{flPtyFcltyLocVo.telephone3}
+            </if>
+            <if test="flPtyFcltyLocVo.mobilePhone1 != null">
+                , MOBILE_PHONE1 = #{flPtyFcltyLocVo.mobilePhone1}
+            </if>
+            <if test="flPtyFcltyLocVo.mobilePhone2 != null">
+                , MOBILE_PHONE2 = #{flPtyFcltyLocVo.mobilePhone2}
+            </if>
+            <if test="flPtyFcltyLocVo.vldFrom != null">
+                , VLD_FROM = #{flPtyFcltyLocVo.vldFrom}
+            </if>
+            <if test="flPtyFcltyLocVo.vldTo != null">
+                , VLD_TO = #{flPtyFcltyLocVo.vldTo}
+            </if>
+            <if test="flPtyFcltyLocVo.statCd != null">
+                , STAT_CD = #{flPtyFcltyLocVo.statCd}
+            </if>
+            <if test="flPtyFcltyLocVo.statNmCn != null">
+                , STAT_NM_CN = #{flPtyFcltyLocVo.statNmCn}
+            </if>
+            <if test="flPtyFcltyLocVo.viewOrd != null">
+                , VIEW_ORD = #{flPtyFcltyLocVo.viewOrd}
+            </if>
+            <if test="flPtyFcltyLocVo.logicOrd != null">
+                , LOGIC_ORD = #{flPtyFcltyLocVo.logicOrd}
+            </if>
+            <if test="flPtyFcltyLocVo.crtTm != null">
+                , CRT_TM = #{flPtyFcltyLocVo.crtTm}
+            </if>
+            <if test="flPtyFcltyLocVo.crtBy != null">
+                , CRT_BY = #{flPtyFcltyLocVo.crtBy}
+            </if>
+            <if test="flPtyFcltyLocVo.updTm != null">
+                , UPD_TM = #{flPtyFcltyLocVo.updTm}
+            </if>
+            <if test="flPtyFcltyLocVo.updBy != null">
+                , UPD_BY = #{flPtyFcltyLocVo.updBy}
+            </if>
+            <if test="flPtyFcltyLocVo.editFlag != null">
+                , EDIT_FLAG = #{flPtyFcltyLocVo.editFlag}
+            </if>
+            <if test="flPtyFcltyLocVo.relsNbr != null">
+                , RELS_NBR = #{flPtyFcltyLocVo.relsNbr}
+            </if>
+        </trim>
+    </sql>
+    <sql id="sql:deleteFlPtyFcltyLoc">
+        <![CDATA[ delete from CART.FL_PTY_FCLTY_LOC  ]]>
+    </sql>
+    <sql id="sql:selectFlPtyWhsePureList">
+        <![CDATA[ select CART__FL_PTY_FCLTY.ID CART__FL_PTY_FCLTY__ID, CART__FL_PTY_FCLTY.PTY_ID CART__FL_PTY_FCLTY__PTY_ID, CART__FL_PTY_FCLTY.PTY_CD CART__FL_PTY_FCLTY__PTY_CD
+            , CART__FL_PTY_FCLTY.PTY_NM_CN CART__FL_PTY_FCLTY__PTY_NM_CN, CART__FL_PTY_FCLTY.FCLTY_ID CART__FL_PTY_FCLTY__FCLTY_ID, CART__FL_PTY_FCLTY.FCLTY_CD CART__FL_PTY_FCLTY__FCLTY_CD
+            , CART__FL_PTY_FCLTY.FCLTY_NM_CN CART__FL_PTY_FCLTY__FCLTY_NM_CN, CART__FL_PTY_FCLTY.FCLTY_CAT_CD CART__FL_PTY_FCLTY__FCLTY_CAT_CD, CART__FL_PTY_FCLTY.FCLTY_CAT_NM_CN CART__FL_PTY_FCLTY__FCLTY_CAT_NM_CN
+            , CART__FL_PTY_FCLTY.CD CART__FL_PTY_FCLTY__CD, CART__FL_PTY_FCLTY.NM_CN CART__FL_PTY_FCLTY__NM_CN, CART__FL_PTY_FCLTY.NM_EN CART__FL_PTY_FCLTY__NM_EN
+            , CART__FL_PTY_FCLTY.OPR_SPEC CART__FL_PTY_FCLTY__OPR_SPEC, CART__FL_PTY_FCLTY.MEMO CART__FL_PTY_FCLTY__MEMO, CART__FL_PTY_FCLTY.CAT_CD CART__FL_PTY_FCLTY__CAT_CD
+            , CART__FL_PTY_FCLTY.CAT_NM_CN CART__FL_PTY_FCLTY__CAT_NM_CN, CART__FL_PTY_FCLTY.OWNER_ID CART__FL_PTY_FCLTY__OWNER_ID, CART__FL_PTY_FCLTY.OWNER_CD CART__FL_PTY_FCLTY__OWNER_CD
+            , CART__FL_PTY_FCLTY.OWNER_NM_CN CART__FL_PTY_FCLTY__OWNER_NM_CN, CART__FL_PTY_FCLTY.OWNER_CONTC_NM CART__FL_PTY_FCLTY__OWNER_CONTC_NM, CART__FL_PTY_FCLTY.OWNER_CONTC_TEL CART__FL_PTY_FCLTY__OWNER_CONTC_TEL
+            , CART__FL_PTY_FCLTY.DRVR_ID CART__FL_PTY_FCLTY__DRVR_ID, CART__FL_PTY_FCLTY.DRVR_CD CART__FL_PTY_FCLTY__DRVR_CD, CART__FL_PTY_FCLTY.DRVR_NM_CN CART__FL_PTY_FCLTY__DRVR_NM_CN
+            , CART__FL_PTY_FCLTY.VLD_FROM CART__FL_PTY_FCLTY__VLD_FROM, CART__FL_PTY_FCLTY.VLD_TO CART__FL_PTY_FCLTY__VLD_TO, CART__FL_PTY_FCLTY.STAT_CD CART__FL_PTY_FCLTY__STAT_CD
+            , CART__FL_PTY_FCLTY.STAT_NM_CN CART__FL_PTY_FCLTY__STAT_NM_CN, CART__FL_PTY_FCLTY.VIEW_ORD CART__FL_PTY_FCLTY__VIEW_ORD, CART__FL_PTY_FCLTY.LOGIC_ORD CART__FL_PTY_FCLTY__LOGIC_ORD
+            , CART__FL_PTY_FCLTY.PREF_FLAG CART__FL_PTY_FCLTY__PREF_FLAG, CART__FL_PTY_FCLTY.CRT_TM CART__FL_PTY_FCLTY__CRT_TM, CART__FL_PTY_FCLTY.CRT_BY CART__FL_PTY_FCLTY__CRT_BY
+            , CART__FL_PTY_FCLTY.CRT_CHL_CD CART__FL_PTY_FCLTY__CRT_CHL_CD, CART__FL_PTY_FCLTY.UPD_TM CART__FL_PTY_FCLTY__UPD_TM, CART__FL_PTY_FCLTY.UPD_BY CART__FL_PTY_FCLTY__UPD_BY
+            , CART__FL_PTY_FCLTY.UPD_CHL_CD CART__FL_PTY_FCLTY__UPD_CHL_CD, CART__FL_PTY_FCLTY.EDIT_FLAG CART__FL_PTY_FCLTY__EDIT_FLAG, CART__FL_PTY_FCLTY.RELS_NBR CART__FL_PTY_FCLTY__RELS_NBR
+            , CART__FL_PTY_FCLTY_LOC.ID CART__FL_PTY_FCLTY_LOC__ID, CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_ID CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_ID, CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_CD CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_CD
+            , CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_NM_CN CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_NM_CN, CART__FL_PTY_FCLTY_LOC.LOC_ID CART__FL_PTY_FCLTY_LOC__LOC_ID
+            , CART__FL_PTY_FCLTY_LOC.LOC_CD CART__FL_PTY_FCLTY_LOC__LOC_CD, CART__FL_PTY_FCLTY_LOC.LOC_NM_CN CART__FL_PTY_FCLTY_LOC__LOC_NM_CN, CART__FL_PTY_FCLTY_LOC.CD CART__FL_PTY_FCLTY_LOC__CD
+            , CART__FL_PTY_FCLTY_LOC.NM_CN CART__FL_PTY_FCLTY_LOC__NM_CN, CART__FL_PTY_FCLTY_LOC.NM_EN CART__FL_PTY_FCLTY_LOC__NM_EN, CART__FL_PTY_FCLTY_LOC.MEMO CART__FL_PTY_FCLTY_LOC__MEMO
+            , CART__FL_PTY_FCLTY_LOC.CAT_CD CART__FL_PTY_FCLTY_LOC__CAT_CD, CART__FL_PTY_FCLTY_LOC.CAT_NM_CN CART__FL_PTY_FCLTY_LOC__CAT_NM_CN, CART__FL_PTY_FCLTY_LOC.CTRY_CD CART__FL_PTY_FCLTY_LOC__CTRY_CD
+            , CART__FL_PTY_FCLTY_LOC.CTRY_NM_CN CART__FL_PTY_FCLTY_LOC__CTRY_NM_CN, CART__FL_PTY_FCLTY_LOC.ST_CD CART__FL_PTY_FCLTY_LOC__ST_CD, CART__FL_PTY_FCLTY_LOC.ST_NM_CN CART__FL_PTY_FCLTY_LOC__ST_NM_CN
+            , CART__FL_PTY_FCLTY_LOC.CTY_CD CART__FL_PTY_FCLTY_LOC__CTY_CD, CART__FL_PTY_FCLTY_LOC.CTY_NM_CN CART__FL_PTY_FCLTY_LOC__CTY_NM_CN, CART__FL_PTY_FCLTY_LOC.DIST_CD CART__FL_PTY_FCLTY_LOC__DIST_CD
+            , CART__FL_PTY_FCLTY_LOC.DIST_NM_CN CART__FL_PTY_FCLTY_LOC__DIST_NM_CN, CART__FL_PTY_FCLTY_LOC.ADDR_LINE1 CART__FL_PTY_FCLTY_LOC__ADDR_LINE1
+            , CART__FL_PTY_FCLTY_LOC.ADDR_LINE2 CART__FL_PTY_FCLTY_LOC__ADDR_LINE2, CART__FL_PTY_FCLTY_LOC.ZIP_CD CART__FL_PTY_FCLTY_LOC__ZIP_CD, CART__FL_PTY_FCLTY_LOC.CONTC_NM1 CART__FL_PTY_FCLTY_LOC__CONTC_NM1
+            , CART__FL_PTY_FCLTY_LOC.CONTC_NM2 CART__FL_PTY_FCLTY_LOC__CONTC_NM2, CART__FL_PTY_FCLTY_LOC.TELEPHONE1 CART__FL_PTY_FCLTY_LOC__TELEPHONE1
+            , CART__FL_PTY_FCLTY_LOC.TELEPHONE2 CART__FL_PTY_FCLTY_LOC__TELEPHONE2, CART__FL_PTY_FCLTY_LOC.TELEPHONE3 CART__FL_PTY_FCLTY_LOC__TELEPHONE3
+            , CART__FL_PTY_FCLTY_LOC.MOBILE_PHONE1 CART__FL_PTY_FCLTY_LOC__MOBILE_PHONE1, CART__FL_PTY_FCLTY_LOC.MOBILE_PHONE2 CART__FL_PTY_FCLTY_LOC__MOBILE_PHONE2
+            , CART__FL_PTY_FCLTY_LOC.VLD_FROM CART__FL_PTY_FCLTY_LOC__VLD_FROM, CART__FL_PTY_FCLTY_LOC.VLD_TO CART__FL_PTY_FCLTY_LOC__VLD_TO, CART__FL_PTY_FCLTY_LOC.STAT_CD CART__FL_PTY_FCLTY_LOC__STAT_CD
+            , CART__FL_PTY_FCLTY_LOC.STAT_NM_CN CART__FL_PTY_FCLTY_LOC__STAT_NM_CN, CART__FL_PTY_FCLTY_LOC.VIEW_ORD CART__FL_PTY_FCLTY_LOC__VIEW_ORD, CART__FL_PTY_FCLTY_LOC.LOGIC_ORD CART__FL_PTY_FCLTY_LOC__LOGIC_ORD
+            , CART__FL_PTY_FCLTY_LOC.CRT_TM CART__FL_PTY_FCLTY_LOC__CRT_TM, CART__FL_PTY_FCLTY_LOC.CRT_BY CART__FL_PTY_FCLTY_LOC__CRT_BY, CART__FL_PTY_FCLTY_LOC.UPD_TM CART__FL_PTY_FCLTY_LOC__UPD_TM
+            , CART__FL_PTY_FCLTY_LOC.UPD_BY CART__FL_PTY_FCLTY_LOC__UPD_BY, CART__FL_PTY_FCLTY_LOC.EDIT_FLAG CART__FL_PTY_FCLTY_LOC__EDIT_FLAG, CART__FL_PTY_FCLTY_LOC.RELS_NBR CART__FL_PTY_FCLTY_LOC__RELS_NBR
+            
+            from CART.FL_PTY_FCLTY CART__FL_PTY_FCLTY
+            left join CART.FL_PTY_FCLTY_LOC CART__FL_PTY_FCLTY_LOC on CART__FL_PTY_FCLTY.ID = CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_ID ]]>
+    </sql>
+    <sql id="sql:selectFlPtyWhsePureListColumnName">
+        <![CDATA[ CART__FL_PTY_FCLTY.ID CART__FL_PTY_FCLTY__ID, CART__FL_PTY_FCLTY.PTY_ID CART__FL_PTY_FCLTY__PTY_ID, CART__FL_PTY_FCLTY.PTY_CD CART__FL_PTY_FCLTY__PTY_CD
+            , CART__FL_PTY_FCLTY.PTY_NM_CN CART__FL_PTY_FCLTY__PTY_NM_CN, CART__FL_PTY_FCLTY.FCLTY_ID CART__FL_PTY_FCLTY__FCLTY_ID, CART__FL_PTY_FCLTY.FCLTY_CD CART__FL_PTY_FCLTY__FCLTY_CD
+            , CART__FL_PTY_FCLTY.FCLTY_NM_CN CART__FL_PTY_FCLTY__FCLTY_NM_CN, CART__FL_PTY_FCLTY.FCLTY_CAT_CD CART__FL_PTY_FCLTY__FCLTY_CAT_CD, CART__FL_PTY_FCLTY.FCLTY_CAT_NM_CN CART__FL_PTY_FCLTY__FCLTY_CAT_NM_CN
+            , CART__FL_PTY_FCLTY.CD CART__FL_PTY_FCLTY__CD, CART__FL_PTY_FCLTY.NM_CN CART__FL_PTY_FCLTY__NM_CN, CART__FL_PTY_FCLTY.NM_EN CART__FL_PTY_FCLTY__NM_EN
+            , CART__FL_PTY_FCLTY.OPR_SPEC CART__FL_PTY_FCLTY__OPR_SPEC, CART__FL_PTY_FCLTY.MEMO CART__FL_PTY_FCLTY__MEMO, CART__FL_PTY_FCLTY.CAT_CD CART__FL_PTY_FCLTY__CAT_CD
+            , CART__FL_PTY_FCLTY.CAT_NM_CN CART__FL_PTY_FCLTY__CAT_NM_CN, CART__FL_PTY_FCLTY.OWNER_ID CART__FL_PTY_FCLTY__OWNER_ID, CART__FL_PTY_FCLTY.OWNER_CD CART__FL_PTY_FCLTY__OWNER_CD
+            , CART__FL_PTY_FCLTY.OWNER_NM_CN CART__FL_PTY_FCLTY__OWNER_NM_CN, CART__FL_PTY_FCLTY.OWNER_CONTC_NM CART__FL_PTY_FCLTY__OWNER_CONTC_NM, CART__FL_PTY_FCLTY.OWNER_CONTC_TEL CART__FL_PTY_FCLTY__OWNER_CONTC_TEL
+            , CART__FL_PTY_FCLTY.DRVR_ID CART__FL_PTY_FCLTY__DRVR_ID, CART__FL_PTY_FCLTY.DRVR_CD CART__FL_PTY_FCLTY__DRVR_CD, CART__FL_PTY_FCLTY.DRVR_NM_CN CART__FL_PTY_FCLTY__DRVR_NM_CN
+            , CART__FL_PTY_FCLTY.VLD_FROM CART__FL_PTY_FCLTY__VLD_FROM, CART__FL_PTY_FCLTY.VLD_TO CART__FL_PTY_FCLTY__VLD_TO, CART__FL_PTY_FCLTY.STAT_CD CART__FL_PTY_FCLTY__STAT_CD
+            , CART__FL_PTY_FCLTY.STAT_NM_CN CART__FL_PTY_FCLTY__STAT_NM_CN, CART__FL_PTY_FCLTY.VIEW_ORD CART__FL_PTY_FCLTY__VIEW_ORD, CART__FL_PTY_FCLTY.LOGIC_ORD CART__FL_PTY_FCLTY__LOGIC_ORD
+            , CART__FL_PTY_FCLTY.PREF_FLAG CART__FL_PTY_FCLTY__PREF_FLAG, CART__FL_PTY_FCLTY.CRT_TM CART__FL_PTY_FCLTY__CRT_TM, CART__FL_PTY_FCLTY.CRT_BY CART__FL_PTY_FCLTY__CRT_BY
+            , CART__FL_PTY_FCLTY.CRT_CHL_CD CART__FL_PTY_FCLTY__CRT_CHL_CD, CART__FL_PTY_FCLTY.UPD_TM CART__FL_PTY_FCLTY__UPD_TM, CART__FL_PTY_FCLTY.UPD_BY CART__FL_PTY_FCLTY__UPD_BY
+            , CART__FL_PTY_FCLTY.UPD_CHL_CD CART__FL_PTY_FCLTY__UPD_CHL_CD, CART__FL_PTY_FCLTY.EDIT_FLAG CART__FL_PTY_FCLTY__EDIT_FLAG, CART__FL_PTY_FCLTY.RELS_NBR CART__FL_PTY_FCLTY__RELS_NBR
+            , CART__FL_PTY_FCLTY_LOC.ID CART__FL_PTY_FCLTY_LOC__ID, CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_ID CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_ID, CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_CD CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_CD
+            , CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_NM_CN CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_NM_CN, CART__FL_PTY_FCLTY_LOC.LOC_ID CART__FL_PTY_FCLTY_LOC__LOC_ID
+            , CART__FL_PTY_FCLTY_LOC.LOC_CD CART__FL_PTY_FCLTY_LOC__LOC_CD, CART__FL_PTY_FCLTY_LOC.LOC_NM_CN CART__FL_PTY_FCLTY_LOC__LOC_NM_CN, CART__FL_PTY_FCLTY_LOC.CD CART__FL_PTY_FCLTY_LOC__CD
+            , CART__FL_PTY_FCLTY_LOC.NM_CN CART__FL_PTY_FCLTY_LOC__NM_CN, CART__FL_PTY_FCLTY_LOC.NM_EN CART__FL_PTY_FCLTY_LOC__NM_EN, CART__FL_PTY_FCLTY_LOC.MEMO CART__FL_PTY_FCLTY_LOC__MEMO
+            , CART__FL_PTY_FCLTY_LOC.CAT_CD CART__FL_PTY_FCLTY_LOC__CAT_CD, CART__FL_PTY_FCLTY_LOC.CAT_NM_CN CART__FL_PTY_FCLTY_LOC__CAT_NM_CN, CART__FL_PTY_FCLTY_LOC.CTRY_CD CART__FL_PTY_FCLTY_LOC__CTRY_CD
+            , CART__FL_PTY_FCLTY_LOC.CTRY_NM_CN CART__FL_PTY_FCLTY_LOC__CTRY_NM_CN, CART__FL_PTY_FCLTY_LOC.ST_CD CART__FL_PTY_FCLTY_LOC__ST_CD, CART__FL_PTY_FCLTY_LOC.ST_NM_CN CART__FL_PTY_FCLTY_LOC__ST_NM_CN
+            , CART__FL_PTY_FCLTY_LOC.CTY_CD CART__FL_PTY_FCLTY_LOC__CTY_CD, CART__FL_PTY_FCLTY_LOC.CTY_NM_CN CART__FL_PTY_FCLTY_LOC__CTY_NM_CN, CART__FL_PTY_FCLTY_LOC.DIST_CD CART__FL_PTY_FCLTY_LOC__DIST_CD
+            , CART__FL_PTY_FCLTY_LOC.DIST_NM_CN CART__FL_PTY_FCLTY_LOC__DIST_NM_CN, CART__FL_PTY_FCLTY_LOC.ADDR_LINE1 CART__FL_PTY_FCLTY_LOC__ADDR_LINE1
+            , CART__FL_PTY_FCLTY_LOC.ADDR_LINE2 CART__FL_PTY_FCLTY_LOC__ADDR_LINE2, CART__FL_PTY_FCLTY_LOC.ZIP_CD CART__FL_PTY_FCLTY_LOC__ZIP_CD, CART__FL_PTY_FCLTY_LOC.CONTC_NM1 CART__FL_PTY_FCLTY_LOC__CONTC_NM1
+            , CART__FL_PTY_FCLTY_LOC.CONTC_NM2 CART__FL_PTY_FCLTY_LOC__CONTC_NM2, CART__FL_PTY_FCLTY_LOC.TELEPHONE1 CART__FL_PTY_FCLTY_LOC__TELEPHONE1
+            , CART__FL_PTY_FCLTY_LOC.TELEPHONE2 CART__FL_PTY_FCLTY_LOC__TELEPHONE2, CART__FL_PTY_FCLTY_LOC.TELEPHONE3 CART__FL_PTY_FCLTY_LOC__TELEPHONE3
+            , CART__FL_PTY_FCLTY_LOC.MOBILE_PHONE1 CART__FL_PTY_FCLTY_LOC__MOBILE_PHONE1, CART__FL_PTY_FCLTY_LOC.MOBILE_PHONE2 CART__FL_PTY_FCLTY_LOC__MOBILE_PHONE2
+            , CART__FL_PTY_FCLTY_LOC.VLD_FROM CART__FL_PTY_FCLTY_LOC__VLD_FROM, CART__FL_PTY_FCLTY_LOC.VLD_TO CART__FL_PTY_FCLTY_LOC__VLD_TO, CART__FL_PTY_FCLTY_LOC.STAT_CD CART__FL_PTY_FCLTY_LOC__STAT_CD
+            , CART__FL_PTY_FCLTY_LOC.STAT_NM_CN CART__FL_PTY_FCLTY_LOC__STAT_NM_CN, CART__FL_PTY_FCLTY_LOC.VIEW_ORD CART__FL_PTY_FCLTY_LOC__VIEW_ORD, CART__FL_PTY_FCLTY_LOC.LOGIC_ORD CART__FL_PTY_FCLTY_LOC__LOGIC_ORD
+            , CART__FL_PTY_FCLTY_LOC.CRT_TM CART__FL_PTY_FCLTY_LOC__CRT_TM, CART__FL_PTY_FCLTY_LOC.CRT_BY CART__FL_PTY_FCLTY_LOC__CRT_BY, CART__FL_PTY_FCLTY_LOC.UPD_TM CART__FL_PTY_FCLTY_LOC__UPD_TM
+            , CART__FL_PTY_FCLTY_LOC.UPD_BY CART__FL_PTY_FCLTY_LOC__UPD_BY, CART__FL_PTY_FCLTY_LOC.EDIT_FLAG CART__FL_PTY_FCLTY_LOC__EDIT_FLAG, CART__FL_PTY_FCLTY_LOC.RELS_NBR CART__FL_PTY_FCLTY_LOC__RELS_NBR
+             ]]>
+    </sql>
+    <sql id="sql:selectFlPtyWhsePureListColumnAlias">
+        <![CDATA[ CART__FL_PTY_FCLTY__ID, CART__FL_PTY_FCLTY__PTY_ID, CART__FL_PTY_FCLTY__PTY_CD, CART__FL_PTY_FCLTY__PTY_NM_CN, CART__FL_PTY_FCLTY__FCLTY_ID, CART__FL_PTY_FCLTY__FCLTY_CD
+            , CART__FL_PTY_FCLTY__FCLTY_NM_CN, CART__FL_PTY_FCLTY__FCLTY_CAT_CD, CART__FL_PTY_FCLTY__FCLTY_CAT_NM_CN, CART__FL_PTY_FCLTY__CD, CART__FL_PTY_FCLTY__NM_CN
+            , CART__FL_PTY_FCLTY__NM_EN, CART__FL_PTY_FCLTY__OPR_SPEC, CART__FL_PTY_FCLTY__MEMO, CART__FL_PTY_FCLTY__CAT_CD, CART__FL_PTY_FCLTY__CAT_NM_CN
+            , CART__FL_PTY_FCLTY__OWNER_ID, CART__FL_PTY_FCLTY__OWNER_CD, CART__FL_PTY_FCLTY__OWNER_NM_CN, CART__FL_PTY_FCLTY__OWNER_CONTC_NM, CART__FL_PTY_FCLTY__OWNER_CONTC_TEL
+            , CART__FL_PTY_FCLTY__DRVR_ID, CART__FL_PTY_FCLTY__DRVR_CD, CART__FL_PTY_FCLTY__DRVR_NM_CN, CART__FL_PTY_FCLTY__VLD_FROM, CART__FL_PTY_FCLTY__VLD_TO
+            , CART__FL_PTY_FCLTY__STAT_CD, CART__FL_PTY_FCLTY__STAT_NM_CN, CART__FL_PTY_FCLTY__VIEW_ORD, CART__FL_PTY_FCLTY__LOGIC_ORD, CART__FL_PTY_FCLTY__PREF_FLAG
+            , CART__FL_PTY_FCLTY__CRT_TM, CART__FL_PTY_FCLTY__CRT_BY, CART__FL_PTY_FCLTY__CRT_CHL_CD, CART__FL_PTY_FCLTY__UPD_TM, CART__FL_PTY_FCLTY__UPD_BY
+            , CART__FL_PTY_FCLTY__UPD_CHL_CD, CART__FL_PTY_FCLTY__EDIT_FLAG, CART__FL_PTY_FCLTY__RELS_NBR, CART__FL_PTY_FCLTY_LOC__ID, CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_ID
+            , CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_CD, CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_NM_CN, CART__FL_PTY_FCLTY_LOC__LOC_ID, CART__FL_PTY_FCLTY_LOC__LOC_CD
+            , CART__FL_PTY_FCLTY_LOC__LOC_NM_CN, CART__FL_PTY_FCLTY_LOC__CD, CART__FL_PTY_FCLTY_LOC__NM_CN, CART__FL_PTY_FCLTY_LOC__NM_EN, CART__FL_PTY_FCLTY_LOC__MEMO
+            , CART__FL_PTY_FCLTY_LOC__CAT_CD, CART__FL_PTY_FCLTY_LOC__CAT_NM_CN, CART__FL_PTY_FCLTY_LOC__CTRY_CD, CART__FL_PTY_FCLTY_LOC__CTRY_NM_CN, CART__FL_PTY_FCLTY_LOC__ST_CD
+            , CART__FL_PTY_FCLTY_LOC__ST_NM_CN, CART__FL_PTY_FCLTY_LOC__CTY_CD, CART__FL_PTY_FCLTY_LOC__CTY_NM_CN, CART__FL_PTY_FCLTY_LOC__DIST_CD, CART__FL_PTY_FCLTY_LOC__DIST_NM_CN
+            , CART__FL_PTY_FCLTY_LOC__ADDR_LINE1, CART__FL_PTY_FCLTY_LOC__ADDR_LINE2, CART__FL_PTY_FCLTY_LOC__ZIP_CD, CART__FL_PTY_FCLTY_LOC__CONTC_NM1
+            , CART__FL_PTY_FCLTY_LOC__CONTC_NM2, CART__FL_PTY_FCLTY_LOC__TELEPHONE1, CART__FL_PTY_FCLTY_LOC__TELEPHONE2, CART__FL_PTY_FCLTY_LOC__TELEPHONE3
+            , CART__FL_PTY_FCLTY_LOC__MOBILE_PHONE1, CART__FL_PTY_FCLTY_LOC__MOBILE_PHONE2, CART__FL_PTY_FCLTY_LOC__VLD_FROM, CART__FL_PTY_FCLTY_LOC__VLD_TO
+            , CART__FL_PTY_FCLTY_LOC__STAT_CD, CART__FL_PTY_FCLTY_LOC__STAT_NM_CN, CART__FL_PTY_FCLTY_LOC__VIEW_ORD, CART__FL_PTY_FCLTY_LOC__LOGIC_ORD
+            , CART__FL_PTY_FCLTY_LOC__CRT_TM, CART__FL_PTY_FCLTY_LOC__CRT_BY, CART__FL_PTY_FCLTY_LOC__UPD_TM, CART__FL_PTY_FCLTY_LOC__UPD_BY, CART__FL_PTY_FCLTY_LOC__EDIT_FLAG
+            , CART__FL_PTY_FCLTY_LOC__RELS_NBR ]]>
+    </sql>
+    <sql id="sql:selectFlPtyWhsePureListFrom">
+        <![CDATA[ 
+            from CART.FL_PTY_FCLTY CART__FL_PTY_FCLTY
+            left join CART.FL_PTY_FCLTY_LOC CART__FL_PTY_FCLTY_LOC on CART__FL_PTY_FCLTY.ID = CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_ID ]]>
+    </sql>
+    <sql id="sql:selectFlPtyWhse">
+        <![CDATA[ select CART__FL_PTY_FCLTY.ID CART__FL_PTY_FCLTY__ID, CART__FL_PTY_FCLTY.PTY_ID CART__FL_PTY_FCLTY__PTY_ID, CART__FL_PTY_FCLTY.PTY_CD CART__FL_PTY_FCLTY__PTY_CD
+            , CART__FL_PTY_FCLTY.PTY_NM_CN CART__FL_PTY_FCLTY__PTY_NM_CN, CART__FL_PTY_FCLTY.FCLTY_ID CART__FL_PTY_FCLTY__FCLTY_ID, CART__FL_PTY_FCLTY.FCLTY_CD CART__FL_PTY_FCLTY__FCLTY_CD
+            , CART__FL_PTY_FCLTY.FCLTY_NM_CN CART__FL_PTY_FCLTY__FCLTY_NM_CN, CART__FL_PTY_FCLTY.FCLTY_CAT_CD CART__FL_PTY_FCLTY__FCLTY_CAT_CD, CART__FL_PTY_FCLTY.FCLTY_CAT_NM_CN CART__FL_PTY_FCLTY__FCLTY_CAT_NM_CN
+            , CART__FL_PTY_FCLTY.CD CART__FL_PTY_FCLTY__CD, CART__FL_PTY_FCLTY.NM_CN CART__FL_PTY_FCLTY__NM_CN, CART__FL_PTY_FCLTY.NM_EN CART__FL_PTY_FCLTY__NM_EN
+            , CART__FL_PTY_FCLTY.OPR_SPEC CART__FL_PTY_FCLTY__OPR_SPEC, CART__FL_PTY_FCLTY.MEMO CART__FL_PTY_FCLTY__MEMO, CART__FL_PTY_FCLTY.CAT_CD CART__FL_PTY_FCLTY__CAT_CD
+            , CART__FL_PTY_FCLTY.CAT_NM_CN CART__FL_PTY_FCLTY__CAT_NM_CN, CART__FL_PTY_FCLTY.OWNER_ID CART__FL_PTY_FCLTY__OWNER_ID, CART__FL_PTY_FCLTY.OWNER_CD CART__FL_PTY_FCLTY__OWNER_CD
+            , CART__FL_PTY_FCLTY.OWNER_NM_CN CART__FL_PTY_FCLTY__OWNER_NM_CN, CART__FL_PTY_FCLTY.OWNER_CONTC_NM CART__FL_PTY_FCLTY__OWNER_CONTC_NM, CART__FL_PTY_FCLTY.OWNER_CONTC_TEL CART__FL_PTY_FCLTY__OWNER_CONTC_TEL
+            , CART__FL_PTY_FCLTY.DRVR_ID CART__FL_PTY_FCLTY__DRVR_ID, CART__FL_PTY_FCLTY.DRVR_CD CART__FL_PTY_FCLTY__DRVR_CD, CART__FL_PTY_FCLTY.DRVR_NM_CN CART__FL_PTY_FCLTY__DRVR_NM_CN
+            , CART__FL_PTY_FCLTY.VLD_FROM CART__FL_PTY_FCLTY__VLD_FROM, CART__FL_PTY_FCLTY.VLD_TO CART__FL_PTY_FCLTY__VLD_TO, CART__FL_PTY_FCLTY.STAT_CD CART__FL_PTY_FCLTY__STAT_CD
+            , CART__FL_PTY_FCLTY.STAT_NM_CN CART__FL_PTY_FCLTY__STAT_NM_CN, CART__FL_PTY_FCLTY.VIEW_ORD CART__FL_PTY_FCLTY__VIEW_ORD, CART__FL_PTY_FCLTY.LOGIC_ORD CART__FL_PTY_FCLTY__LOGIC_ORD
+            , CART__FL_PTY_FCLTY.PREF_FLAG CART__FL_PTY_FCLTY__PREF_FLAG, CART__FL_PTY_FCLTY.CRT_TM CART__FL_PTY_FCLTY__CRT_TM, CART__FL_PTY_FCLTY.CRT_BY CART__FL_PTY_FCLTY__CRT_BY
+            , CART__FL_PTY_FCLTY.CRT_CHL_CD CART__FL_PTY_FCLTY__CRT_CHL_CD, CART__FL_PTY_FCLTY.UPD_TM CART__FL_PTY_FCLTY__UPD_TM, CART__FL_PTY_FCLTY.UPD_BY CART__FL_PTY_FCLTY__UPD_BY
+            , CART__FL_PTY_FCLTY.UPD_CHL_CD CART__FL_PTY_FCLTY__UPD_CHL_CD, CART__FL_PTY_FCLTY.EDIT_FLAG CART__FL_PTY_FCLTY__EDIT_FLAG, CART__FL_PTY_FCLTY.RELS_NBR CART__FL_PTY_FCLTY__RELS_NBR
+            , CART__FL_PTY_FCLTY_LOC.ID CART__FL_PTY_FCLTY_LOC__ID, CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_ID CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_ID, CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_CD CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_CD
+            , CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_NM_CN CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_NM_CN, CART__FL_PTY_FCLTY_LOC.LOC_ID CART__FL_PTY_FCLTY_LOC__LOC_ID
+            , CART__FL_PTY_FCLTY_LOC.LOC_CD CART__FL_PTY_FCLTY_LOC__LOC_CD, CART__FL_PTY_FCLTY_LOC.LOC_NM_CN CART__FL_PTY_FCLTY_LOC__LOC_NM_CN, CART__FL_PTY_FCLTY_LOC.CD CART__FL_PTY_FCLTY_LOC__CD
+            , CART__FL_PTY_FCLTY_LOC.NM_CN CART__FL_PTY_FCLTY_LOC__NM_CN, CART__FL_PTY_FCLTY_LOC.NM_EN CART__FL_PTY_FCLTY_LOC__NM_EN, CART__FL_PTY_FCLTY_LOC.MEMO CART__FL_PTY_FCLTY_LOC__MEMO
+            , CART__FL_PTY_FCLTY_LOC.CAT_CD CART__FL_PTY_FCLTY_LOC__CAT_CD, CART__FL_PTY_FCLTY_LOC.CAT_NM_CN CART__FL_PTY_FCLTY_LOC__CAT_NM_CN, CART__FL_PTY_FCLTY_LOC.CTRY_CD CART__FL_PTY_FCLTY_LOC__CTRY_CD
+            , CART__FL_PTY_FCLTY_LOC.CTRY_NM_CN CART__FL_PTY_FCLTY_LOC__CTRY_NM_CN, CART__FL_PTY_FCLTY_LOC.ST_CD CART__FL_PTY_FCLTY_LOC__ST_CD, CART__FL_PTY_FCLTY_LOC.ST_NM_CN CART__FL_PTY_FCLTY_LOC__ST_NM_CN
+            , CART__FL_PTY_FCLTY_LOC.CTY_CD CART__FL_PTY_FCLTY_LOC__CTY_CD, CART__FL_PTY_FCLTY_LOC.CTY_NM_CN CART__FL_PTY_FCLTY_LOC__CTY_NM_CN, CART__FL_PTY_FCLTY_LOC.DIST_CD CART__FL_PTY_FCLTY_LOC__DIST_CD
+            , CART__FL_PTY_FCLTY_LOC.DIST_NM_CN CART__FL_PTY_FCLTY_LOC__DIST_NM_CN, CART__FL_PTY_FCLTY_LOC.ADDR_LINE1 CART__FL_PTY_FCLTY_LOC__ADDR_LINE1
+            , CART__FL_PTY_FCLTY_LOC.ADDR_LINE2 CART__FL_PTY_FCLTY_LOC__ADDR_LINE2, CART__FL_PTY_FCLTY_LOC.ZIP_CD CART__FL_PTY_FCLTY_LOC__ZIP_CD, CART__FL_PTY_FCLTY_LOC.CONTC_NM1 CART__FL_PTY_FCLTY_LOC__CONTC_NM1
+            , CART__FL_PTY_FCLTY_LOC.CONTC_NM2 CART__FL_PTY_FCLTY_LOC__CONTC_NM2, CART__FL_PTY_FCLTY_LOC.TELEPHONE1 CART__FL_PTY_FCLTY_LOC__TELEPHONE1
+            , CART__FL_PTY_FCLTY_LOC.TELEPHONE2 CART__FL_PTY_FCLTY_LOC__TELEPHONE2, CART__FL_PTY_FCLTY_LOC.TELEPHONE3 CART__FL_PTY_FCLTY_LOC__TELEPHONE3
+            , CART__FL_PTY_FCLTY_LOC.MOBILE_PHONE1 CART__FL_PTY_FCLTY_LOC__MOBILE_PHONE1, CART__FL_PTY_FCLTY_LOC.MOBILE_PHONE2 CART__FL_PTY_FCLTY_LOC__MOBILE_PHONE2
+            , CART__FL_PTY_FCLTY_LOC.VLD_FROM CART__FL_PTY_FCLTY_LOC__VLD_FROM, CART__FL_PTY_FCLTY_LOC.VLD_TO CART__FL_PTY_FCLTY_LOC__VLD_TO, CART__FL_PTY_FCLTY_LOC.STAT_CD CART__FL_PTY_FCLTY_LOC__STAT_CD
+            , CART__FL_PTY_FCLTY_LOC.STAT_NM_CN CART__FL_PTY_FCLTY_LOC__STAT_NM_CN, CART__FL_PTY_FCLTY_LOC.VIEW_ORD CART__FL_PTY_FCLTY_LOC__VIEW_ORD, CART__FL_PTY_FCLTY_LOC.LOGIC_ORD CART__FL_PTY_FCLTY_LOC__LOGIC_ORD
+            , CART__FL_PTY_FCLTY_LOC.CRT_TM CART__FL_PTY_FCLTY_LOC__CRT_TM, CART__FL_PTY_FCLTY_LOC.CRT_BY CART__FL_PTY_FCLTY_LOC__CRT_BY, CART__FL_PTY_FCLTY_LOC.UPD_TM CART__FL_PTY_FCLTY_LOC__UPD_TM
+            , CART__FL_PTY_FCLTY_LOC.UPD_BY CART__FL_PTY_FCLTY_LOC__UPD_BY, CART__FL_PTY_FCLTY_LOC.EDIT_FLAG CART__FL_PTY_FCLTY_LOC__EDIT_FLAG, CART__FL_PTY_FCLTY_LOC.RELS_NBR CART__FL_PTY_FCLTY_LOC__RELS_NBR
+            , CART__RT_RTE.ARRV_PTY_FCLTY_ID CART__RT_RTE__ARRV_PTY_FCLTY_ID, CART__FN_PTY_LOADOFF_PRICING.PTY_FCLTY_ID CART__FN_PTY_LOADOFF_PRICING__PTY_FCLTY_ID
+            
+            from CART.FL_PTY_FCLTY CART__FL_PTY_FCLTY
+            inner join CART.FL_PTY_FCLTY_LOC CART__FL_PTY_FCLTY_LOC on CART__FL_PTY_FCLTY.ID = CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_ID
+            left join CART.RT_RTE CART__RT_RTE on CART__FL_PTY_FCLTY.ID = CART__RT_RTE.ARRV_PTY_FCLTY_ID
+            left join CART.FN_PTY_LOADOFF_PRICING CART__FN_PTY_LOADOFF_PRICING on CART__FL_PTY_FCLTY.ID = CART__FN_PTY_LOADOFF_PRICING.PTY_FCLTY_ID
+            left join CART.FN_PTY_PRICING LOADOFF_FN_PTY_PRICING on CART__FN_PTY_LOADOFF_PRICING.ID = LOADOFF_FN_PTY_PRICING.ID ]]>
+    </sql>
+    <sql id="sql:selectFlPtyWhseColumnName">
+        <![CDATA[ CART__FL_PTY_FCLTY.ID CART__FL_PTY_FCLTY__ID, CART__FL_PTY_FCLTY.PTY_ID CART__FL_PTY_FCLTY__PTY_ID, CART__FL_PTY_FCLTY.PTY_CD CART__FL_PTY_FCLTY__PTY_CD
+            , CART__FL_PTY_FCLTY.PTY_NM_CN CART__FL_PTY_FCLTY__PTY_NM_CN, CART__FL_PTY_FCLTY.FCLTY_ID CART__FL_PTY_FCLTY__FCLTY_ID, CART__FL_PTY_FCLTY.FCLTY_CD CART__FL_PTY_FCLTY__FCLTY_CD
+            , CART__FL_PTY_FCLTY.FCLTY_NM_CN CART__FL_PTY_FCLTY__FCLTY_NM_CN, CART__FL_PTY_FCLTY.FCLTY_CAT_CD CART__FL_PTY_FCLTY__FCLTY_CAT_CD, CART__FL_PTY_FCLTY.FCLTY_CAT_NM_CN CART__FL_PTY_FCLTY__FCLTY_CAT_NM_CN
+            , CART__FL_PTY_FCLTY.CD CART__FL_PTY_FCLTY__CD, CART__FL_PTY_FCLTY.NM_CN CART__FL_PTY_FCLTY__NM_CN, CART__FL_PTY_FCLTY.NM_EN CART__FL_PTY_FCLTY__NM_EN
+            , CART__FL_PTY_FCLTY.OPR_SPEC CART__FL_PTY_FCLTY__OPR_SPEC, CART__FL_PTY_FCLTY.MEMO CART__FL_PTY_FCLTY__MEMO, CART__FL_PTY_FCLTY.CAT_CD CART__FL_PTY_FCLTY__CAT_CD
+            , CART__FL_PTY_FCLTY.CAT_NM_CN CART__FL_PTY_FCLTY__CAT_NM_CN, CART__FL_PTY_FCLTY.OWNER_ID CART__FL_PTY_FCLTY__OWNER_ID, CART__FL_PTY_FCLTY.OWNER_CD CART__FL_PTY_FCLTY__OWNER_CD
+            , CART__FL_PTY_FCLTY.OWNER_NM_CN CART__FL_PTY_FCLTY__OWNER_NM_CN, CART__FL_PTY_FCLTY.OWNER_CONTC_NM CART__FL_PTY_FCLTY__OWNER_CONTC_NM, CART__FL_PTY_FCLTY.OWNER_CONTC_TEL CART__FL_PTY_FCLTY__OWNER_CONTC_TEL
+            , CART__FL_PTY_FCLTY.DRVR_ID CART__FL_PTY_FCLTY__DRVR_ID, CART__FL_PTY_FCLTY.DRVR_CD CART__FL_PTY_FCLTY__DRVR_CD, CART__FL_PTY_FCLTY.DRVR_NM_CN CART__FL_PTY_FCLTY__DRVR_NM_CN
+            , CART__FL_PTY_FCLTY.VLD_FROM CART__FL_PTY_FCLTY__VLD_FROM, CART__FL_PTY_FCLTY.VLD_TO CART__FL_PTY_FCLTY__VLD_TO, CART__FL_PTY_FCLTY.STAT_CD CART__FL_PTY_FCLTY__STAT_CD
+            , CART__FL_PTY_FCLTY.STAT_NM_CN CART__FL_PTY_FCLTY__STAT_NM_CN, CART__FL_PTY_FCLTY.VIEW_ORD CART__FL_PTY_FCLTY__VIEW_ORD, CART__FL_PTY_FCLTY.LOGIC_ORD CART__FL_PTY_FCLTY__LOGIC_ORD
+            , CART__FL_PTY_FCLTY.PREF_FLAG CART__FL_PTY_FCLTY__PREF_FLAG, CART__FL_PTY_FCLTY.CRT_TM CART__FL_PTY_FCLTY__CRT_TM, CART__FL_PTY_FCLTY.CRT_BY CART__FL_PTY_FCLTY__CRT_BY
+            , CART__FL_PTY_FCLTY.CRT_CHL_CD CART__FL_PTY_FCLTY__CRT_CHL_CD, CART__FL_PTY_FCLTY.UPD_TM CART__FL_PTY_FCLTY__UPD_TM, CART__FL_PTY_FCLTY.UPD_BY CART__FL_PTY_FCLTY__UPD_BY
+            , CART__FL_PTY_FCLTY.UPD_CHL_CD CART__FL_PTY_FCLTY__UPD_CHL_CD, CART__FL_PTY_FCLTY.EDIT_FLAG CART__FL_PTY_FCLTY__EDIT_FLAG, CART__FL_PTY_FCLTY.RELS_NBR CART__FL_PTY_FCLTY__RELS_NBR
+            , CART__FL_PTY_FCLTY_LOC.ID CART__FL_PTY_FCLTY_LOC__ID, CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_ID CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_ID, CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_CD CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_CD
+            , CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_NM_CN CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_NM_CN, CART__FL_PTY_FCLTY_LOC.LOC_ID CART__FL_PTY_FCLTY_LOC__LOC_ID
+            , CART__FL_PTY_FCLTY_LOC.LOC_CD CART__FL_PTY_FCLTY_LOC__LOC_CD, CART__FL_PTY_FCLTY_LOC.LOC_NM_CN CART__FL_PTY_FCLTY_LOC__LOC_NM_CN, CART__FL_PTY_FCLTY_LOC.CD CART__FL_PTY_FCLTY_LOC__CD
+            , CART__FL_PTY_FCLTY_LOC.NM_CN CART__FL_PTY_FCLTY_LOC__NM_CN, CART__FL_PTY_FCLTY_LOC.NM_EN CART__FL_PTY_FCLTY_LOC__NM_EN, CART__FL_PTY_FCLTY_LOC.MEMO CART__FL_PTY_FCLTY_LOC__MEMO
+            , CART__FL_PTY_FCLTY_LOC.CAT_CD CART__FL_PTY_FCLTY_LOC__CAT_CD, CART__FL_PTY_FCLTY_LOC.CAT_NM_CN CART__FL_PTY_FCLTY_LOC__CAT_NM_CN, CART__FL_PTY_FCLTY_LOC.CTRY_CD CART__FL_PTY_FCLTY_LOC__CTRY_CD
+            , CART__FL_PTY_FCLTY_LOC.CTRY_NM_CN CART__FL_PTY_FCLTY_LOC__CTRY_NM_CN, CART__FL_PTY_FCLTY_LOC.ST_CD CART__FL_PTY_FCLTY_LOC__ST_CD, CART__FL_PTY_FCLTY_LOC.ST_NM_CN CART__FL_PTY_FCLTY_LOC__ST_NM_CN
+            , CART__FL_PTY_FCLTY_LOC.CTY_CD CART__FL_PTY_FCLTY_LOC__CTY_CD, CART__FL_PTY_FCLTY_LOC.CTY_NM_CN CART__FL_PTY_FCLTY_LOC__CTY_NM_CN, CART__FL_PTY_FCLTY_LOC.DIST_CD CART__FL_PTY_FCLTY_LOC__DIST_CD
+            , CART__FL_PTY_FCLTY_LOC.DIST_NM_CN CART__FL_PTY_FCLTY_LOC__DIST_NM_CN, CART__FL_PTY_FCLTY_LOC.ADDR_LINE1 CART__FL_PTY_FCLTY_LOC__ADDR_LINE1
+            , CART__FL_PTY_FCLTY_LOC.ADDR_LINE2 CART__FL_PTY_FCLTY_LOC__ADDR_LINE2, CART__FL_PTY_FCLTY_LOC.ZIP_CD CART__FL_PTY_FCLTY_LOC__ZIP_CD, CART__FL_PTY_FCLTY_LOC.CONTC_NM1 CART__FL_PTY_FCLTY_LOC__CONTC_NM1
+            , CART__FL_PTY_FCLTY_LOC.CONTC_NM2 CART__FL_PTY_FCLTY_LOC__CONTC_NM2, CART__FL_PTY_FCLTY_LOC.TELEPHONE1 CART__FL_PTY_FCLTY_LOC__TELEPHONE1
+            , CART__FL_PTY_FCLTY_LOC.TELEPHONE2 CART__FL_PTY_FCLTY_LOC__TELEPHONE2, CART__FL_PTY_FCLTY_LOC.TELEPHONE3 CART__FL_PTY_FCLTY_LOC__TELEPHONE3
+            , CART__FL_PTY_FCLTY_LOC.MOBILE_PHONE1 CART__FL_PTY_FCLTY_LOC__MOBILE_PHONE1, CART__FL_PTY_FCLTY_LOC.MOBILE_PHONE2 CART__FL_PTY_FCLTY_LOC__MOBILE_PHONE2
+            , CART__FL_PTY_FCLTY_LOC.VLD_FROM CART__FL_PTY_FCLTY_LOC__VLD_FROM, CART__FL_PTY_FCLTY_LOC.VLD_TO CART__FL_PTY_FCLTY_LOC__VLD_TO, CART__FL_PTY_FCLTY_LOC.STAT_CD CART__FL_PTY_FCLTY_LOC__STAT_CD
+            , CART__FL_PTY_FCLTY_LOC.STAT_NM_CN CART__FL_PTY_FCLTY_LOC__STAT_NM_CN, CART__FL_PTY_FCLTY_LOC.VIEW_ORD CART__FL_PTY_FCLTY_LOC__VIEW_ORD, CART__FL_PTY_FCLTY_LOC.LOGIC_ORD CART__FL_PTY_FCLTY_LOC__LOGIC_ORD
+            , CART__FL_PTY_FCLTY_LOC.CRT_TM CART__FL_PTY_FCLTY_LOC__CRT_TM, CART__FL_PTY_FCLTY_LOC.CRT_BY CART__FL_PTY_FCLTY_LOC__CRT_BY, CART__FL_PTY_FCLTY_LOC.UPD_TM CART__FL_PTY_FCLTY_LOC__UPD_TM
+            , CART__FL_PTY_FCLTY_LOC.UPD_BY CART__FL_PTY_FCLTY_LOC__UPD_BY, CART__FL_PTY_FCLTY_LOC.EDIT_FLAG CART__FL_PTY_FCLTY_LOC__EDIT_FLAG, CART__FL_PTY_FCLTY_LOC.RELS_NBR CART__FL_PTY_FCLTY_LOC__RELS_NBR
+            , CART__RT_RTE.ARRV_PTY_FCLTY_ID CART__RT_RTE__ARRV_PTY_FCLTY_ID, CART__FN_PTY_LOADOFF_PRICING.PTY_FCLTY_ID CART__FN_PTY_LOADOFF_PRICING__PTY_FCLTY_ID
+             ]]>
+    </sql>
+    <sql id="sql:selectFlPtyWhseColumnAlias">
+        <![CDATA[ CART__FL_PTY_FCLTY__ID, CART__FL_PTY_FCLTY__PTY_ID, CART__FL_PTY_FCLTY__PTY_CD, CART__FL_PTY_FCLTY__PTY_NM_CN, CART__FL_PTY_FCLTY__FCLTY_ID, CART__FL_PTY_FCLTY__FCLTY_CD
+            , CART__FL_PTY_FCLTY__FCLTY_NM_CN, CART__FL_PTY_FCLTY__FCLTY_CAT_CD, CART__FL_PTY_FCLTY__FCLTY_CAT_NM_CN, CART__FL_PTY_FCLTY__CD, CART__FL_PTY_FCLTY__NM_CN
+            , CART__FL_PTY_FCLTY__NM_EN, CART__FL_PTY_FCLTY__OPR_SPEC, CART__FL_PTY_FCLTY__MEMO, CART__FL_PTY_FCLTY__CAT_CD, CART__FL_PTY_FCLTY__CAT_NM_CN
+            , CART__FL_PTY_FCLTY__OWNER_ID, CART__FL_PTY_FCLTY__OWNER_CD, CART__FL_PTY_FCLTY__OWNER_NM_CN, CART__FL_PTY_FCLTY__OWNER_CONTC_NM, CART__FL_PTY_FCLTY__OWNER_CONTC_TEL
+            , CART__FL_PTY_FCLTY__DRVR_ID, CART__FL_PTY_FCLTY__DRVR_CD, CART__FL_PTY_FCLTY__DRVR_NM_CN, CART__FL_PTY_FCLTY__VLD_FROM, CART__FL_PTY_FCLTY__VLD_TO
+            , CART__FL_PTY_FCLTY__STAT_CD, CART__FL_PTY_FCLTY__STAT_NM_CN, CART__FL_PTY_FCLTY__VIEW_ORD, CART__FL_PTY_FCLTY__LOGIC_ORD, CART__FL_PTY_FCLTY__PREF_FLAG
+            , CART__FL_PTY_FCLTY__CRT_TM, CART__FL_PTY_FCLTY__CRT_BY, CART__FL_PTY_FCLTY__CRT_CHL_CD, CART__FL_PTY_FCLTY__UPD_TM, CART__FL_PTY_FCLTY__UPD_BY
+            , CART__FL_PTY_FCLTY__UPD_CHL_CD, CART__FL_PTY_FCLTY__EDIT_FLAG, CART__FL_PTY_FCLTY__RELS_NBR, CART__FL_PTY_FCLTY_LOC__ID, CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_ID
+            , CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_CD, CART__FL_PTY_FCLTY_LOC__PTY_FCLTY_NM_CN, CART__FL_PTY_FCLTY_LOC__LOC_ID, CART__FL_PTY_FCLTY_LOC__LOC_CD
+            , CART__FL_PTY_FCLTY_LOC__LOC_NM_CN, CART__FL_PTY_FCLTY_LOC__CD, CART__FL_PTY_FCLTY_LOC__NM_CN, CART__FL_PTY_FCLTY_LOC__NM_EN, CART__FL_PTY_FCLTY_LOC__MEMO
+            , CART__FL_PTY_FCLTY_LOC__CAT_CD, CART__FL_PTY_FCLTY_LOC__CAT_NM_CN, CART__FL_PTY_FCLTY_LOC__CTRY_CD, CART__FL_PTY_FCLTY_LOC__CTRY_NM_CN, CART__FL_PTY_FCLTY_LOC__ST_CD
+            , CART__FL_PTY_FCLTY_LOC__ST_NM_CN, CART__FL_PTY_FCLTY_LOC__CTY_CD, CART__FL_PTY_FCLTY_LOC__CTY_NM_CN, CART__FL_PTY_FCLTY_LOC__DIST_CD, CART__FL_PTY_FCLTY_LOC__DIST_NM_CN
+            , CART__FL_PTY_FCLTY_LOC__ADDR_LINE1, CART__FL_PTY_FCLTY_LOC__ADDR_LINE2, CART__FL_PTY_FCLTY_LOC__ZIP_CD, CART__FL_PTY_FCLTY_LOC__CONTC_NM1
+            , CART__FL_PTY_FCLTY_LOC__CONTC_NM2, CART__FL_PTY_FCLTY_LOC__TELEPHONE1, CART__FL_PTY_FCLTY_LOC__TELEPHONE2, CART__FL_PTY_FCLTY_LOC__TELEPHONE3
+            , CART__FL_PTY_FCLTY_LOC__MOBILE_PHONE1, CART__FL_PTY_FCLTY_LOC__MOBILE_PHONE2, CART__FL_PTY_FCLTY_LOC__VLD_FROM, CART__FL_PTY_FCLTY_LOC__VLD_TO
+            , CART__FL_PTY_FCLTY_LOC__STAT_CD, CART__FL_PTY_FCLTY_LOC__STAT_NM_CN, CART__FL_PTY_FCLTY_LOC__VIEW_ORD, CART__FL_PTY_FCLTY_LOC__LOGIC_ORD
+            , CART__FL_PTY_FCLTY_LOC__CRT_TM, CART__FL_PTY_FCLTY_LOC__CRT_BY, CART__FL_PTY_FCLTY_LOC__UPD_TM, CART__FL_PTY_FCLTY_LOC__UPD_BY, CART__FL_PTY_FCLTY_LOC__EDIT_FLAG
+            , CART__FL_PTY_FCLTY_LOC__RELS_NBR, CART__RT_RTE__ARRV_PTY_FCLTY_ID, CART__FN_PTY_LOADOFF_PRICING__PTY_FCLTY_ID ]]>
+    </sql>
+    <sql id="sql:selectFlPtyWhseFrom">
+        <![CDATA[ 
+            from CART.FL_PTY_FCLTY CART__FL_PTY_FCLTY
+            inner join CART.FL_PTY_FCLTY_LOC CART__FL_PTY_FCLTY_LOC on CART__FL_PTY_FCLTY.ID = CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_ID
+            left join CART.RT_RTE CART__RT_RTE on CART__FL_PTY_FCLTY.ID = CART__RT_RTE.ARRV_PTY_FCLTY_ID
+            left join CART.FN_PTY_LOADOFF_PRICING CART__FN_PTY_LOADOFF_PRICING on CART__FL_PTY_FCLTY.ID = CART__FN_PTY_LOADOFF_PRICING.PTY_FCLTY_ID
+            left join CART.FN_PTY_PRICING LOADOFF_FN_PTY_PRICING on CART__FN_PTY_LOADOFF_PRICING.ID = LOADOFF_FN_PTY_PRICING.ID ]]>
+    </sql>
+    <sql id="sql:selectFlPtyWhseHasDelivPrice">
+        <![CDATA[ select CART__FL_PTY_FCLTY.ID CART__FL_PTY_FCLTY__ID
+            from CART.FL_PTY_FCLTY CART__FL_PTY_FCLTY
+            , CART.FL_PTY_FCLTY_LOC CART__FL_PTY_FCLTY_LOC
+            , CART.RT_RTE CART__RT_RTE
+            , CART.LC_LOC CART__LC_LOC
+            , CART.FN_PTY_PRICING DELIV_FN_PTY_PRICING
+            where CART__FL_PTY_FCLTY.ID = CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_ID
+            and CART__FL_PTY_FCLTY.ID = CART__RT_RTE.ARRV_PTY_FCLTY_ID
+            and CART__RT_RTE.DPTR_LOC_ID = CART__LC_LOC.ID
+            and CART__LC_LOC.CTY_CD = DELIV_FN_PTY_PRICING.CTY_CD ]]>
+    </sql>
+    <sql id="sql:selectFlPtyWhseHasDelivPriceColumnName">
+        <![CDATA[ CART__FL_PTY_FCLTY.ID CART__FL_PTY_FCLTY__ID ]]>
+    </sql>
+    <sql id="sql:selectFlPtyWhseHasDelivPriceColumnAlias">
+        <![CDATA[ CART__FL_PTY_FCLTY__ID ]]>
+    </sql>
+    <sql id="sql:selectFlPtyWhseHasDelivPriceFrom">
+        <![CDATA[ 
+            from CART.FL_PTY_FCLTY CART__FL_PTY_FCLTY
+            , CART.FL_PTY_FCLTY_LOC CART__FL_PTY_FCLTY_LOC
+            , CART.RT_RTE CART__RT_RTE
+            , CART.LC_LOC CART__LC_LOC
+            , CART.FN_PTY_PRICING DELIV_FN_PTY_PRICING
+            where CART__FL_PTY_FCLTY.ID = CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_ID
+            and CART__FL_PTY_FCLTY.ID = CART__RT_RTE.ARRV_PTY_FCLTY_ID
+            and CART__RT_RTE.DPTR_LOC_ID = CART__LC_LOC.ID
+            and CART__LC_LOC.CTY_CD = DELIV_FN_PTY_PRICING.CTY_CD ]]>
+    </sql>
+    <select id="selectFlPtyWhsePureListByPKLong" parameterType="java.lang.Long" resultMap="selectFlPtyWhsePureListResultMap">
+        <include refid="sql:selectFlPtyWhsePureList"/>
+        <![CDATA[ 
+            where CART__FL_PTY_FCLTY.ID = #{id} ]]>
+    </select>
+    <select id="selectFlPtyWhsePureListByPKDtoX" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX" resultMap="selectFlPtyWhsePureListResultMap">
+        <include refid="sql:selectFlPtyWhsePureList"/>
+        <![CDATA[ 
+            where CART__FL_PTY_FCLTY.ID = #{flPtyFcltyVo.id} ]]>
+    </select>
+    <select id="selectFlPtyWhsePureListBySql" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX" resultMap="selectFlPtyWhsePureListResultMap">
+        <include refid="sql:selectFlPtyWhsePureList"/>
+        <trim>
+            <if test="mapperSqlClause.whereClause != null">
+                <trim prefix=" where " prefixOverrides="and ">
+                    <![CDATA[ ${mapperSqlClause.whereClause} ]]>
+                </trim>
+            </if>
+        </trim>
+        <choose>
+            <when test="mapperSqlClause.orderByClause != null">
+                <trim prefix="order by ">
+                    <![CDATA[ ${mapperSqlClause.orderByClause} ]]>
+                </trim>
+            </when>
+            <otherwise>
+                <trim prefix="order by ">
+                    <![CDATA[ CART__FL_PTY_FCLTY.UPD_TM desc ]]>
+                </trim>
+            </otherwise>
+        </choose>
+        <choose>
+            <when test="mapperSqlClause.startRow == -1 or mapperSqlClause.pageSize == -1">
+                <![CDATA[ limit ${mapperSqlClause.dfltMaxRow} ]]>
+            </when>
+            <otherwise>
+                <![CDATA[ limit #{mapperSqlClause.startRow}, #{mapperSqlClause.pageSize} ]]>
+            </otherwise>
+        </choose>
+    </select>
+    <select id="countFlPtyWhsePureListBySql" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX" resultType="int">
+        <trim>
+            <![CDATA[ select count(1)
+            from CART.FL_PTY_FCLTY CART__FL_PTY_FCLTY
+            left join CART.FL_PTY_FCLTY_LOC CART__FL_PTY_FCLTY_LOC on CART__FL_PTY_FCLTY.ID = CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_ID ]]>
+        </trim>
+        <trim>
+            <if test="mapperSqlClause.whereClause != null">
+                <trim prefix=" where " prefixOverrides="and ">
+                    <![CDATA[ ${mapperSqlClause.whereClause} ]]>
+                </trim>
+            </if>
+        </trim>
+    </select>
+    <select id="selectFlPtyWhseByPKLong" parameterType="java.lang.Long" resultMap="selectFlPtyWhseResultMap">
+        <include refid="sql:selectFlPtyWhse"/>
+        <![CDATA[ 
+            where CART__FL_PTY_FCLTY.ID = #{id} ]]>
+    </select>
+    <select id="selectFlPtyWhseByPKDtoX" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX" resultMap="selectFlPtyWhseResultMap">
+        <include refid="sql:selectFlPtyWhse"/>
+        <![CDATA[ 
+            where CART__FL_PTY_FCLTY.ID = #{flPtyFcltyVo.id} ]]>
+    </select>
+    <select id="selectFlPtyWhseBySql" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX" resultMap="selectFlPtyWhseResultMap">
+        <include refid="sql:selectFlPtyWhse"/>
+        <trim>
+            <![CDATA[ where CART__FL_PTY_FCLTY_LOC.EDIT_FLAG <> '1100.210'
+            and CART__RT_RTE.EDIT_FLAG <> '1100.210'
+            and CART__RT_RTE.CAT_CD = '2601.209'
+            and LOADOFF_FN_PTY_PRICING.EDIT_FLAG <> '1100.210'
+            and LOADOFF_FN_PTY_PRICING.CAT_CD = '2282.204.302'
+            and CART__FL_PTY_FCLTY.EDIT_FLAG <> '1100.210' ]]>
+        </trim>
+        <trim>
+            <if test="mapperSqlClause.whereClause != null">
+                <trim prefix=" and " prefixOverrides="and ">
+                    <![CDATA[ ${mapperSqlClause.whereClause} ]]>
+                </trim>
+            </if>
+        </trim>
+        <choose>
+            <when test="mapperSqlClause.orderByClause != null">
+                <trim prefix="order by ">
+                    <![CDATA[ ${mapperSqlClause.orderByClause} ]]>
+                </trim>
+            </when>
+            <otherwise>
+                <trim prefix="order by ">
+                    <![CDATA[ CART__FL_PTY_FCLTY.UPD_TM desc ]]>
+                </trim>
+            </otherwise>
+        </choose>
+        <choose>
+            <when test="mapperSqlClause.startRow == -1 or mapperSqlClause.pageSize == -1">
+                <![CDATA[ limit ${mapperSqlClause.dfltMaxRow} ]]>
+            </when>
+            <otherwise>
+                <![CDATA[ limit #{mapperSqlClause.startRow}, #{mapperSqlClause.pageSize} ]]>
+            </otherwise>
+        </choose>
+    </select>
+    <select id="countFlPtyWhseBySql" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX" resultType="int">
+        <trim>
+            <![CDATA[ select count(1)
+            from CART.FL_PTY_FCLTY CART__FL_PTY_FCLTY
+            inner join CART.FL_PTY_FCLTY_LOC CART__FL_PTY_FCLTY_LOC on CART__FL_PTY_FCLTY.ID = CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_ID
+            left join CART.RT_RTE CART__RT_RTE on CART__FL_PTY_FCLTY.ID = CART__RT_RTE.ARRV_PTY_FCLTY_ID
+            left join CART.FN_PTY_LOADOFF_PRICING CART__FN_PTY_LOADOFF_PRICING on CART__FL_PTY_FCLTY.ID = CART__FN_PTY_LOADOFF_PRICING.PTY_FCLTY_ID
+            left join CART.FN_PTY_PRICING LOADOFF_FN_PTY_PRICING on CART__FN_PTY_LOADOFF_PRICING.ID = LOADOFF_FN_PTY_PRICING.ID
+            where CART__FL_PTY_FCLTY_LOC.EDIT_FLAG <> '1100.210'
+            and CART__RT_RTE.EDIT_FLAG <> '1100.210'
+            and CART__RT_RTE.CAT_CD = '2601.209'
+            and LOADOFF_FN_PTY_PRICING.EDIT_FLAG <> '1100.210'
+            and LOADOFF_FN_PTY_PRICING.CAT_CD = '2282.204.302'
+            and CART__FL_PTY_FCLTY.EDIT_FLAG <> '1100.210' ]]>
+        </trim>
+        <trim>
+            <if test="mapperSqlClause.whereClause != null">
+                <trim prefix=" and " prefixOverrides="and ">
+                    <![CDATA[ ${mapperSqlClause.whereClause} ]]>
+                </trim>
+            </if>
+        </trim>
+    </select>
+    <select id="selectFlPtyWhseHasDelivPriceByPKLong" parameterType="java.lang.Long" resultMap="selectFlPtyWhseHasDelivPriceResultMap">
+        <include refid="sql:selectFlPtyWhseHasDelivPrice"/>
+        <![CDATA[ 
+            and CART__FL_PTY_FCLTY.ID = #{id} ]]>
+    </select>
+    <select id="selectFlPtyWhseHasDelivPriceByPKDtoX" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX" resultMap="selectFlPtyWhseHasDelivPriceResultMap">
+        <include refid="sql:selectFlPtyWhseHasDelivPrice"/>
+        <![CDATA[ 
+            and CART__FL_PTY_FCLTY.ID = #{flPtyFcltyVo.id} ]]>
+    </select>
+    <select id="selectFlPtyWhseHasDelivPriceBySql" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX" resultMap="selectFlPtyWhseHasDelivPriceResultMap">
+        <include refid="sql:selectFlPtyWhseHasDelivPrice"/>
+        <trim>
+            <![CDATA[ and CART__FL_PTY_FCLTY_LOC.EDIT_FLAG <> '1100.210'
+            and CART__RT_RTE.EDIT_FLAG <> '1100.210'
+            and CART__RT_RTE.CAT_CD = '2601.209'
+            and CART__LC_LOC.EDIT_FLAG <> '1100.210'
+            and DELIV_FN_PTY_PRICING.EDIT_FLAG <> '1100.210'
+            and DELIV_FN_PTY_PRICING.CAT_CD = '2282.204.300'
+            and CART__FL_PTY_FCLTY.EDIT_FLAG <> '1100.210' ]]>
+        </trim>
+        <trim>
+            <if test="mapperSqlClause.whereClause != null">
+                <trim prefix=" and " prefixOverrides="and ">
+                    <![CDATA[ ${mapperSqlClause.whereClause} ]]>
+                </trim>
+            </if>
+        </trim>
+        <choose>
+            <when test="mapperSqlClause.orderByClause != null">
+                <trim prefix="order by ">
+                    <![CDATA[ ${mapperSqlClause.orderByClause} ]]>
+                </trim>
+            </when>
+            <otherwise>
+                <trim prefix="order by ">
+                    <![CDATA[ CART__FL_PTY_FCLTY.UPD_TM desc ]]>
+                </trim>
+            </otherwise>
+        </choose>
+        <choose>
+            <when test="mapperSqlClause.startRow == -1 or mapperSqlClause.pageSize == -1">
+                <![CDATA[ limit ${mapperSqlClause.dfltMaxRow} ]]>
+            </when>
+            <otherwise>
+                <![CDATA[ limit #{mapperSqlClause.startRow}, #{mapperSqlClause.pageSize} ]]>
+            </otherwise>
+        </choose>
+    </select>
+    <select id="countFlPtyWhseHasDelivPriceBySql" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX" resultType="int">
+        <trim>
+            <![CDATA[ select count(1)
+            from CART.FL_PTY_FCLTY CART__FL_PTY_FCLTY
+            , CART.FL_PTY_FCLTY_LOC CART__FL_PTY_FCLTY_LOC
+            , CART.RT_RTE CART__RT_RTE
+            , CART.LC_LOC CART__LC_LOC
+            , CART.FN_PTY_PRICING DELIV_FN_PTY_PRICING
+            where CART__FL_PTY_FCLTY.ID = CART__FL_PTY_FCLTY_LOC.PTY_FCLTY_ID
+            and CART__FL_PTY_FCLTY.ID = CART__RT_RTE.ARRV_PTY_FCLTY_ID
+            and CART__RT_RTE.DPTR_LOC_ID = CART__LC_LOC.ID
+            and CART__LC_LOC.CTY_CD = DELIV_FN_PTY_PRICING.CTY_CD
+            and CART__FL_PTY_FCLTY_LOC.EDIT_FLAG <> '1100.210'
+            and CART__RT_RTE.EDIT_FLAG <> '1100.210'
+            and CART__RT_RTE.CAT_CD = '2601.209'
+            and CART__LC_LOC.EDIT_FLAG <> '1100.210'
+            and DELIV_FN_PTY_PRICING.EDIT_FLAG <> '1100.210'
+            and DELIV_FN_PTY_PRICING.CAT_CD = '2282.204.300'
+            and CART__FL_PTY_FCLTY.EDIT_FLAG <> '1100.210' ]]>
+        </trim>
+        <trim>
+            <if test="mapperSqlClause.whereClause != null">
+                <trim prefix=" and " prefixOverrides="and ">
+                    <![CDATA[ ${mapperSqlClause.whereClause} ]]>
+                </trim>
+            </if>
+        </trim>
+    </select>
+    <insert id="insertFlPtyFcltyAll" parameterType="com.myco.model.vo.cart.FlPtyFcltyVo">
+        <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER">
+            <![CDATA[ SELECT LAST_INSERT_ID() ]]>
+        </selectKey>
+        <include refid="sql:insertFlPtyFcltyAll"/>
+    </insert>
+    <insert id="insertFlPtyFcltySelective" parameterType="com.myco.model.vo.cart.FlPtyFcltyVo">
+        <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER">
+            <![CDATA[ SELECT LAST_INSERT_ID() ]]>
+        </selectKey>
+        <include refid="sql:insertFlPtyFcltySelectiveColumn"/>
+        <include refid="sql:insertFlPtyFcltySelectiveValue"/>
+    </insert>
+    <insert id="insertFlPtyFcltyAllInBatchWithPK" parameterType="java.util.List">
+        <include refid="sql:insertFlPtyFcltyAllInBatchWithPKColumn"/>
+        <![CDATA[ values ]]>
+        <foreach collection="list" item="FlPtyFcltyVo" index="index" separator=",">
+            <include refid="sql:insertFlPtyFcltyAllInBatchWithPKValue"/>
+        </foreach>
+    </insert>
+    <insert id="insertFlPtyFcltyLocAll" parameterType="com.myco.model.vo.cart.FlPtyFcltyLocVo">
+        <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER">
+            <![CDATA[ SELECT LAST_INSERT_ID() ]]>
+        </selectKey>
+        <include refid="sql:insertFlPtyFcltyLocAll"/>
+    </insert>
+    <insert id="insertFlPtyFcltyLocSelective" parameterType="com.myco.model.vo.cart.FlPtyFcltyLocVo">
+        <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER">
+            <![CDATA[ SELECT LAST_INSERT_ID() ]]>
+        </selectKey>
+        <include refid="sql:insertFlPtyFcltyLocSelectiveColumn"/>
+        <include refid="sql:insertFlPtyFcltyLocSelectiveValue"/>
+    </insert>
+    <insert id="insertFlPtyFcltyLocAllInBatchWithPK" parameterType="java.util.List">
+        <include refid="sql:insertFlPtyFcltyLocAllInBatchWithPKColumn"/>
+        <![CDATA[ values ]]>
+        <foreach collection="list" item="FlPtyFcltyLocVo" index="index" separator=",">
+            <include refid="sql:insertFlPtyFcltyLocAllInBatchWithPKValue"/>
+        </foreach>
+    </insert>
+    <update id="updateFlPtyFcltyAllByPK" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX">
+        <include refid="sql:updateFlPtyFcltyAllByPK"/>
+        <![CDATA[ 
+            where ID = #{id} ]]>
+    </update>
+    <update id="updateFlPtyFcltyAllByPKTmLck" parameterType="java.util.Map">
+        <include refid="sql:updateFlPtyFcltyAllByPKTmLck"/>
+        <![CDATA[ 
+            where ID = #{oldValue.id} and (UPD_TM = #{oldValue.updTm} or UPD_TM is null) ]]>
+    </update>
+    <update id="updateFlPtyFcltySelectiveByPK" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX">
+        <include refid="sql:updateFlPtyFcltySelectiveByPK"/>
+        <![CDATA[ 
+            where ID = #{id} ]]>
+    </update>
+    <update id="updateFlPtyFcltySelectiveByPKTmLck" parameterType="java.util.Map">
+        <include refid="sql:updateFlPtyFcltySelectiveByPKTmLck"/>
+        <![CDATA[ 
+            where ID = #{oldValue.id} and (UPD_TM = #{oldValue.updTm} or UPD_TM is null) ]]>
+    </update>
+    <update id="updateFlPtyFcltyAllBySql" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX">
+        <include refid="sql:updateFlPtyFcltyAllBySql"/>
+        <trim prefix="where" prefixOverrides="and |or ">
+            <![CDATA[ ${mapperSqlClause.whereClause} ]]>
+        </trim>
+    </update>
+    <update id="updateFlPtyFcltySelectiveBySql" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX">
+        <include refid="sql:updateFlPtyFcltySelectiveBySql"/>
+        <trim prefix="where" prefixOverrides="and |or ">
+            <![CDATA[ ${mapperSqlClause.whereClause} ]]>
+        </trim>
+    </update>
+    <update id="updateFlPtyFcltyLocAllByPK" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX">
+        <include refid="sql:updateFlPtyFcltyLocAllByPK"/>
+        <![CDATA[ 
+            where ID = #{id} ]]>
+    </update>
+    <update id="updateFlPtyFcltyLocAllByPKTmLck" parameterType="java.util.Map">
+        <include refid="sql:updateFlPtyFcltyLocAllByPKTmLck"/>
+        <![CDATA[ 
+            where ID = #{oldValue.id} and (UPD_TM = #{oldValue.updTm} or UPD_TM is null) ]]>
+    </update>
+    <update id="updateFlPtyFcltyLocSelectiveByPK" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX">
+        <include refid="sql:updateFlPtyFcltyLocSelectiveByPK"/>
+        <![CDATA[ 
+            where ID = #{id} ]]>
+    </update>
+    <update id="updateFlPtyFcltyLocSelectiveByPKTmLck" parameterType="java.util.Map">
+        <include refid="sql:updateFlPtyFcltyLocSelectiveByPKTmLck"/>
+        <![CDATA[ 
+            where ID = #{oldValue.id} and (UPD_TM = #{oldValue.updTm} or UPD_TM is null) ]]>
+    </update>
+    <update id="updateFlPtyFcltyLocAllBySql" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX">
+        <include refid="sql:updateFlPtyFcltyLocAllBySql"/>
+        <trim prefix="where" prefixOverrides="and |or ">
+            <![CDATA[ ${mapperSqlClause.whereClause} ]]>
+        </trim>
+    </update>
+    <update id="updateFlPtyFcltyLocSelectiveBySql" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX">
+        <include refid="sql:updateFlPtyFcltyLocSelectiveBySql"/>
+        <trim prefix="where" prefixOverrides="and |or ">
+            <![CDATA[ ${mapperSqlClause.whereClause} ]]>
+        </trim>
+    </update>
+    <delete id="deleteFlPtyFcltyByPKLong" parameterType="java.lang.Long">
+        <include refid="sql:deleteFlPtyFclty"/>
+        <![CDATA[ 
+            where ID = #{id} ]]>
+    </delete>
+    <delete id="deleteFlPtyFcltyByPKVo" parameterType="com.myco.model.vo.cart.FlPtyFcltyVo">
+        <include refid="sql:deleteFlPtyFclty"/>
+        <![CDATA[ 
+            where ID = #{id} ]]>
+    </delete>
+    <delete id="deleteFlPtyFcltyByPKVoTmLck" parameterType="com.myco.model.vo.cart.FlPtyFcltyVo">
+        <include refid="sql:deleteFlPtyFclty"/>
+        <![CDATA[ 
+            where ID = #{id} and (UPD_TM = #{updTm} or UPD_TM is null) ]]>
+    </delete>
+    <delete id="deleteFlPtyFcltyBySql" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX">
+        <include refid="sql:deleteFlPtyFclty"/>
+        <trim prefix="where" prefixOverrides="and |or ">
+            <![CDATA[ ${mapperSqlClause.whereClause} ]]>
+        </trim>
+    </delete>
+    <delete id="deleteFlPtyFcltyLocByPKLong" parameterType="java.lang.Long">
+        <include refid="sql:deleteFlPtyFcltyLoc"/>
+        <![CDATA[ 
+            where ID = #{id} ]]>
+    </delete>
+    <delete id="deleteFlPtyFcltyLocByPKVo" parameterType="com.myco.model.vo.cart.FlPtyFcltyLocVo">
+        <include refid="sql:deleteFlPtyFcltyLoc"/>
+        <![CDATA[ 
+            where ID = #{id} ]]>
+    </delete>
+    <delete id="deleteFlPtyFcltyLocByPKVoTmLck" parameterType="com.myco.model.vo.cart.FlPtyFcltyLocVo">
+        <include refid="sql:deleteFlPtyFcltyLoc"/>
+        <![CDATA[ 
+            where ID = #{id} and (UPD_TM = #{updTm} or UPD_TM is null) ]]>
+    </delete>
+    <delete id="deleteFlPtyFcltyLocBySql" parameterType="com.myco.model.dto.cart.ext.FlPtyWhseDtoX">
+        <include refid="sql:deleteFlPtyFcltyLoc"/>
+        <trim prefix="where" prefixOverrides="and |or ">
+            <![CDATA[ ${mapperSqlClause.whereClause} ]]>
+        </trim>
+    </delete>
+</mapper>
